@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:poem_generator/Screens/onboarding/onboarding.dart';
 import 'package:poem_generator/components/widgets.dart';
 
@@ -14,15 +15,12 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: title("Poem Genrator"),
+        title: myTitle("Poem Genrator"),
       ),
       body: Center(
           child: IconButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const OnBoarding()),
-                );
+                Get.offAll(const OnBoarding());
               },
               icon: const Icon(Icons.backspace))),
     );

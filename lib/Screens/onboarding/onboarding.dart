@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:poem_generator/Screens/home.dart';
+import 'package:get/get.dart';
+import 'package:poem_generator/Screens/auth/selectaccount.dart';
 import 'package:poem_generator/Screens/onboarding/onboarding_model.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
@@ -43,23 +43,21 @@ class _OnBoardingState extends State<OnBoarding> {
           },
           itemBuilder: (_, index) {
             return Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
                         onPressed: () {
                           setState(() {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const Home()));
+                            Get.offAll(const SelectAccount());
                           });
                         },
-                        child: const Text("Skip"))),
+                        child: info("Skip", borderColor))),
                 sizeBox(40),
                 SvgPicture.asset(onBoardingScreen[index].image),
                 sizeBox(40),
-                title(onBoardingScreen[index].title, secondaryColor),
+                myTitle(onBoardingScreen[index].title, secondaryColor),
                 const Spacer(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -79,17 +77,11 @@ class _OnBoardingState extends State<OnBoarding> {
                           curve: Curves.easeIn,
                         );
                       } else {
-                        Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Home()));
+                        Get.offAll(const SelectAccount());
                       }
                     });
                   },
-                  style: ElevatedButton.styleFrom(
-                      foregroundColor: whiteColor,
-                      backgroundColor: primaryColor,
-                      fixedSize: Size(MediaQuery.of(context).size.width, 40)),
+                  style: buttonstyle(),
                   child: Text(currentIndex == onBoardingScreen.length - 1
                       ? "Continue"
                       : "Next"),
