@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+// App Colors 
 Color primaryColor = const Color(0xFFF57760);
 Color primaryColor03 = primaryColor.withOpacity(0.3);
 Color secondaryColor = const Color(0xFF374151);
@@ -15,6 +15,7 @@ ButtonStyle buttonstyle() {
       fixedSize: const Size(double.infinity, 50));
 }
 
+// login input style 
 InputDecoration inputStyle(
   IconData icon,
   String hint,
