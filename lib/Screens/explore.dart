@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+
 class Explore extends StatefulWidget {
   const Explore({super.key});
 
@@ -17,6 +18,7 @@ class _ExploreState extends State<Explore> {
           sizeBox(20),
           const ProfileWelcom(),
           sizeBox(20),
+
           searchBar(),
           //////////////////
           ///
@@ -27,26 +29,14 @@ class _ExploreState extends State<Explore> {
 
   Container searchBar() {
     return Container(
-      decoration: BoxDecoration(
-          color: whiteColor,
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: primaryColor03)),
+      decoration: searchDecoration(whiteColor, primaryColor03),
       margin: const EdgeInsets.symmetric(horizontal: 20),
       child: TextField(
-        decoration: InputDecoration(
-          hintText: "Search",
-          contentPadding:
-              const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          suffixIcon: GestureDetector(
-            onTap: () {},
-            child: const Icon(
-              Icons.search,
-            ),
-          ),
-          border: InputBorder.none,
-          fillColor: primaryColor,
-          focusColor: primaryColor,
-        ),
+        decoration: searchStyle("Search ...", primaryColor, primaryColor03, Icons.search),
+        cursorColor: primaryColor,
+        style: TextStyle(color: secondaryColor),
+        autocorrect: true,
+        enableSuggestions: true,
       ),
     );
   }

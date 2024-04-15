@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-// App Colors 
+
+// App Colors
 Color primaryColor = const Color(0xFFF57760);
 Color primaryColor03 = primaryColor.withOpacity(0.3);
 Color secondaryColor = const Color(0xFF374151);
@@ -15,7 +16,7 @@ ButtonStyle buttonstyle() {
       fixedSize: const Size(double.infinity, 50));
 }
 
-// login input style 
+// login input style
 InputDecoration inputStyle(
   IconData icon,
   String hint,
@@ -43,5 +44,31 @@ InputDecoration inputStyle(
         color: primaryColor,
       ),
     ),
+  );
+}
+
+// Search container
+Decoration searchDecoration(Color color, Color borderColor) {
+  return BoxDecoration(
+      color: color,
+      borderRadius: BorderRadius.circular(10),
+      border: Border.all(color: borderColor));
+}
+
+InputDecoration searchStyle(String hint, Color hintColor, Color fillColor , IconData icon ) {
+  return InputDecoration(
+    hintText: hint,
+    hintStyle: TextStyle(color: hintColor, fontWeight: FontWeight.normal),
+    contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+    suffixIcon: GestureDetector(
+      onTap: () {},
+      child:  Icon(
+        icon,
+        color: hintColor,
+      ),
+    ),
+    border: InputBorder.none,
+    fillColor: fillColor,
+    focusColor: borderColor,
   );
 }

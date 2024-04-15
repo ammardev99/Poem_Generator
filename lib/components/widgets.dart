@@ -92,10 +92,10 @@ Widget menuOption(IconData icon, String txt, BuildContext context, [page]) {
       leading: Icon(icon),
       iconColor: primaryColor,
       title: myHeading(txt, page == null ? Colors.black12 : secondaryColor),
-      trailing: Icon(
-        Icons.chevron_right,
-        color: page == null ? Colors.grey : primaryColor03,
-      ),
+      // trailing: Icon(
+      //   Icons.chevron_right,
+      //   color: page == null ? Colors.grey : primaryColor03,
+      // ),
       onTap: () {
         page == null
             ? ScaffoldMessenger.of(context).showSnackBar(SnackBar(
