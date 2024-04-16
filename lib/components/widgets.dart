@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:poem_generator/Screens/ineer%20screens/category_feed.dart';
+import 'package:poem_generator/Screens/ineer%20screens/poem_info.dart';
 import 'package:poem_generator/components/assets.dart';
+import 'package:poem_generator/models/category_model.dart';
 
 Widget myTitle(String text, [Color? color]) {
   return Text(
@@ -22,7 +25,7 @@ Widget myHeading(String text, [Color? color]) {
       fontWeight: FontWeight.w500,
       color: color ?? blackColor,
     ),
-    // textAlign: TextAlign.center,
+//  textAlign: TextAlign.center,
   );
 }
 
@@ -123,9 +126,15 @@ Widget userProfile(
     decoration: BoxDecoration(color: primaryColor),
     child: Center(
       child: ListTile(
-        leading: CircleAvatar(
-          backgroundImage: AssetImage(
-            img,
+        leading: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: whiteColor, width: 1),
+            borderRadius: BorderRadius.circular(100),
+          ),
+          child: CircleAvatar(
+            backgroundImage: AssetImage(
+              img,
+            ),
           ),
         ),
         title: myHeading(name, whiteColor),
@@ -140,21 +149,148 @@ Widget userProfile(
   );
 }
 
+Widget guestOption(String text, page) {
+  return InkWell(
+    borderRadius: BorderRadius.circular(100),
+    onTap: () {
+      Get.offAll(page);
+    },
+    child: Container(
+      width: double.infinity,
+      height: 50,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(100),
+          border: Border.all(width: 1, color: primaryColor)),
+      child: Center(child: myHeading(text, primaryColor)),
+    ),
+  );
+}
 
-
-  Widget guestOption(String text, page) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(100),
+Widget poemCategory(Category category) {
+  return Container(
+    margin: const EdgeInsets.symmetric(vertical: 5),
+    decoration: BoxDecoration(
+      border: Border.all(color: primaryColor03),
+      borderRadius: BorderRadius.circular(8),
+    ),
+    child: InkWell(
       onTap: () {
-        Get.offAll(page);
+        Get.to(CategoryFeed(name: category.type));
       },
-      child: Container(
-        width: double.infinity,
-        height: 50,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(100),
-            border: Border.all(width: 1, color: primaryColor)),
-        child: Center(child: myHeading(text, primaryColor)),
+      borderRadius: BorderRadius.circular(8),
+      hoverColor: whiteColor,
+      splashColor: primaryColor03,
+      child: Row(
+        children: [
+          Container(
+            width: 120,
+            height: 100,
+            decoration: BoxDecoration(
+              color: category.color,
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(8),
+                bottomLeft: Radius.circular(8),
+              ),
+            ),
+            child: Center(child: myHeading(category.type, whiteColor)),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: ListTile(
+              contentPadding: EdgeInsets.zero,
+              title: SizedBox(height: 30, child: myHeading(category.title)),
+              // ignore: unnecessary_null_comparison
+              subtitle: category.count != 0
+                  ? info("Poems ${category.count}")
+                  : info("Poems"),
+            ),
+          ),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}
+
+Widget iconWithLabel(IconData icon, String label) {
+  return Row(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      IconButton(
+        splashColor: primaryColor,
+        hoverColor: Colors.transparent,
+        onPressed: (){}, icon: 
+      Icon(
+        icon,
+        color: primaryColor,
+      ),),
+      const SizedBox(width: 4),
+      info(label),
+    ],
+  );
+}
+
+Widget poemPost(BuildContext context) {
+  return InkWell(
+    splashColor: primaryColor03,
+    hoverColor: Colors.transparent,
+    onTap: () {
+      Get.to(const PoemInfo());
+    },
+    child: Container(
+      padding: const EdgeInsets.all(8),
+      width: MediaQuery.of(context).size.width,
+
+      decoration: BoxDecoration(
+              color: whiteColor,
+          border: Border.all(width: 2, color: primaryColor03),
+          borderRadius: BorderRadius.circular(8)),
+      child: Column(
+        children: [
+    // author info
+          ListTile(
+            contentPadding: const EdgeInsets.all(3),
+            leading: Container(
+              decoration: BoxDecoration(
+                  border: Border.all(width: 2, color: primaryColor03),
+                  borderRadius: BorderRadius.circular(100)),
+              child: const CircleAvatar(
+                backgroundImage: AssetImage('images/author.png'),
+              ),
+            ),
+            title: myHeading("Name", secondaryColor),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(Icons.access_time_outlined, size: 15),
+                sizeBox(4),
+                info("2h")
+              ],
+            ),
+          ),
+          sizeBox(10),
+    // poem text
+          const Text(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus tortor eget mi ultricies, vel placerat justo efficitur.Integer eget ante a ligula efficitur condimentum. Vivamus volutpat libero et nisi luctus, quis sollicitudin lacus vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus tortor eget mi ultricies, vel placerat justo efficitur.Integer eget ante a ligula efficitur condimentum. Vivamus volutpat libero et nisi luctus, quis sollicitudin lacus vulputate.",
+            textAlign: TextAlign.justify,
+          ),
+          sizeBox(10),
+          Divider(
+            color: primaryColor03,
+            indent: 1,
+            endIndent: 1,
+          ),
+          sizeBox(5),
+    // action options
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              iconWithLabel(Icons.thumb_up_alt_outlined, "Like"),
+              iconWithLabel(Icons.favorite_border, "Favorite"),
+              iconWithLabel(Icons.share, "Share"),
+            ],
+          ), 
+        ],
+      ),
+    ),
+  );
+}

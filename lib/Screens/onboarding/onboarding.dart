@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/Screens/auth/selectaccount.dart';
-import 'package:poem_generator/Screens/onboarding/onboarding_model.dart';
+import 'package:poem_generator/models/onboarding_model.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
 

@@ -12,7 +12,7 @@ class Menu extends StatelessWidget {
     return Scaffold(
         body: ListView(
       children: [
-        userProfile("User Name", 'useremail@gmail.com', 'images/logo.png'),
+        userProfile("User Name", 'useremail@gmail.com', 'images/author.png'),
         menuOption(Icons.person,'Profile Setting',context,),
         menuOption(Icons.generating_tokens_outlined,'Genrate Poem',context,const NotFound()),
         menuOption(Icons.star_border,'Rate App',context,const NotFound()),
