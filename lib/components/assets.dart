@@ -47,6 +47,30 @@ InputDecoration inputStyle(
   );
 }
 
+// Edit profile input style
+InputDecoration editProfileinputStyle(String hint
+) {
+  return InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 0),
+                      hintText: hint,
+                      hintStyle: TextStyle(color: borderColor),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide(
+                          color: borderColor,
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100),
+                        borderSide: BorderSide(
+                          color: primaryColor,
+                        ),
+                      ),
+                    );
+}
+
+
 // Search container
 Decoration searchDecoration(Color color, Color borderColor) {
   return BoxDecoration(
@@ -54,6 +78,7 @@ Decoration searchDecoration(Color color, Color borderColor) {
       borderRadius: BorderRadius.circular(10),
       border: Border.all(color: borderColor));
 }
+
 
 InputDecoration searchStyle(String hint, Color hintColor, Color fillColor , IconData icon ) {
   return InputDecoration(

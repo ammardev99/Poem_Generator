@@ -47,11 +47,12 @@ class _GenratePoemState extends State<GenratePoem> {
                       ElevatedButton(
                         onPressed: () {},
                         style: ButtonStyle(
-                          backgroundColor:
-                              MaterialStatePropertyAll(whiteColor),
-                          padding: const MaterialStatePropertyAll(
+                          backgroundColor: MaterialStatePropertyAll(whiteColor),
+                          padding: MaterialStatePropertyAll(
                               EdgeInsets.symmetric(
-                                  horizontal: 125, vertical: 20)),
+                                  horizontal:
+                                      MediaQuery.of(context).size.width / 3,
+                                  vertical: 20)),
                         ),
                         child: myHeading("Generate", secondaryColor),
                       ),
@@ -76,53 +77,46 @@ class _GenratePoemState extends State<GenratePoem> {
 
   Row selectLength() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         myHeading("Length:", whiteColor),
-        sizeBox(10),
-        Expanded(
-          child: Row(
-            children: [
-              Radio(
-                activeColor: whiteColor,
-                splashRadius: 0,
-                value: "Regular",
-                groupValue: getlength,
-                onChanged: (value) {
-                  setState(() {
-                    getlength = value!;
-                  });
-                },
-              ),
-              const Text('Regular'),
-              sizeBox(10),
-              Radio(
-                activeColor: whiteColor,
-                splashRadius: 0,
-                value: "Medium",
-                groupValue: getlength,
-                onChanged: (value) {
-                  setState(() {
-                    getlength = value!;
-                  });
-                },
-              ),
-              const Text('Medium'),
-              sizeBox(10),
-              Radio(
-                activeColor: whiteColor,
-                splashRadius: 0,
-                value: "Long",
-                groupValue: getlength,
-                onChanged: (value) {
-                  setState(() {
-                    getlength = value!;
-                  });
-                },
-              ),
-              const Text('Long'),
-            ],
-          ),
+        sizeBox(5),
+        Radio(
+          activeColor: whiteColor,
+          splashRadius: 0,
+          value: "Regular",
+          groupValue: getlength,
+          onChanged: (value) {
+            setState(() {
+              getlength = value!;
+            });
+          },
         ),
+        const Text('Regular'),
+        Radio(
+          activeColor: whiteColor,
+          splashRadius: 0,
+          value: "Medium",
+          groupValue: getlength,
+          onChanged: (value) {
+            setState(() {
+              getlength = value!;
+            });
+          },
+        ),
+        const Text('Medium'),
+        Radio(
+          activeColor: whiteColor,
+          splashRadius: 0,
+          value: "Long",
+          groupValue: getlength,
+          onChanged: (value) {
+            setState(() {
+              getlength = value!;
+            });
+          },
+        ),
+        const Text('Long'),
       ],
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/Screens/ineer%20screens/category_feed.dart';
 import 'package:poem_generator/Screens/ineer%20screens/poem_info.dart';
+import 'package:poem_generator/Screens/ineer%20screens/profile_edit.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/models/category_model.dart';
 
@@ -126,25 +127,28 @@ Widget userProfile(
     decoration: BoxDecoration(color: primaryColor),
     child: Center(
       child: ListTile(
-        leading: Container(
-          decoration: BoxDecoration(
-            border: Border.all(color: whiteColor, width: 1),
-            borderRadius: BorderRadius.circular(100),
-          ),
-          child: CircleAvatar(
-            backgroundImage: AssetImage(
-              img,
+          leading: Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: whiteColor, width: 1),
+              borderRadius: BorderRadius.circular(100),
+            ),
+            child: CircleAvatar(
+              backgroundImage: AssetImage(
+                img,
+              ),
             ),
           ),
-        ),
-        title: myHeading(name, whiteColor),
-        subtitle: info(email, whiteColor),
-        trailing: Icon(
-          Icons.edit,
-          color: whiteColor,
-        ),
-        onTap: () {},
-      ),
+          title: myHeading(name, whiteColor),
+          subtitle: info(email, whiteColor),
+          trailing: IconButton(
+            onPressed: () {
+              Get.to(const EditProfile());
+            },
+            icon: Icon(
+              Icons.edit,
+              color: whiteColor,
+            ),
+          )),
     ),
   );
 }
@@ -218,11 +222,12 @@ Widget iconWithLabel(IconData icon, String label) {
       IconButton(
         splashColor: primaryColor,
         hoverColor: Colors.transparent,
-        onPressed: (){}, icon: 
-      Icon(
-        icon,
-        color: primaryColor,
-      ),),
+        onPressed: () {},
+        icon: Icon(
+          icon,
+          color: primaryColor,
+        ),
+      ),
       const SizedBox(width: 4),
       info(label),
     ],
@@ -239,14 +244,13 @@ Widget poemPost(BuildContext context) {
     child: Container(
       padding: const EdgeInsets.all(8),
       width: MediaQuery.of(context).size.width,
-
       decoration: BoxDecoration(
-              color: whiteColor,
+          color: whiteColor,
           border: Border.all(width: 2, color: primaryColor03),
           borderRadius: BorderRadius.circular(8)),
       child: Column(
         children: [
-    // author info
+          // author info
           ListTile(
             contentPadding: const EdgeInsets.all(3),
             leading: Container(
@@ -268,7 +272,7 @@ Widget poemPost(BuildContext context) {
             ),
           ),
           sizeBox(10),
-    // poem text
+          // poem text
           const Text(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus tortor eget mi ultricies, vel placerat justo efficitur.Integer eget ante a ligula efficitur condimentum. Vivamus volutpat libero et nisi luctus, quis sollicitudin lacus vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus tortor eget mi ultricies, vel placerat justo efficitur.Integer eget ante a ligula efficitur condimentum. Vivamus volutpat libero et nisi luctus, quis sollicitudin lacus vulputate.",
             textAlign: TextAlign.justify,
@@ -280,7 +284,7 @@ Widget poemPost(BuildContext context) {
             endIndent: 1,
           ),
           sizeBox(5),
-    // action options
+          // action options
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -288,7 +292,7 @@ Widget poemPost(BuildContext context) {
               iconWithLabel(Icons.favorite_border, "Favorite"),
               iconWithLabel(Icons.share, "Share"),
             ],
-          ), 
+          ),
         ],
       ),
     ),
