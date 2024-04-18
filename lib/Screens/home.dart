@@ -14,7 +14,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _selectedIndex = 0;
+    int _selectedScreenIndex = 0;
 
   // items/icon list for BottomAppBar
   List<TabItem> items = [
@@ -38,7 +38,7 @@ const Menu(),
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      body: screen[_selectedIndex],
+      body: screen[_selectedScreenIndex],
       bottomNavigationBar: bottomBar(),
     );
   }
@@ -50,13 +50,13 @@ const Menu(),
       backgroundColor: whiteColor,
       color: secondaryColor,
       colorSelected: primaryColor,
-      indexSelected: _selectedIndex,
+      indexSelected: _selectedScreenIndex,
       isFloating: true,
       highlightStyle: const HighlightStyle(
           sizeLarge: true, isHexagon: true, elevation: 3,
           ),
       onTap: (int index) => setState(() {
-        _selectedIndex = index;
+        _selectedScreenIndex = index;
       }),
     );
   }

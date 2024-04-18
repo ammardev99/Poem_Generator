@@ -85,13 +85,10 @@ InputDecoration searchStyle(String hint, Color hintColor, Color fillColor , Icon
     hintText: hint,
     hintStyle: TextStyle(color: hintColor, fontWeight: FontWeight.normal),
     contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-    suffixIcon: GestureDetector(
-      onTap: () {},
-      child:  Icon(
+    suffixIcon: IconButton(onPressed: (){}, icon: Icon(
         icon,
         color: hintColor,
-      ),
-    ),
+      ),),
     border: InputBorder.none,
     fillColor: fillColor,
     focusColor: borderColor,

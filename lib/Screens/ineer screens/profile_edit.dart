@@ -43,7 +43,7 @@ class _EditProfileState extends State<EditProfile> {
                     TextField(
                         decoration: editProfileinputStyle("email@gmail.com")),
                     sizeBox(15),
-                    myHeading('Mobile Number'),
+                    myHeading('Contact'),
                     sizeBox(5),
                     TextField(
                         decoration: editProfileinputStyle("Phone Number")),

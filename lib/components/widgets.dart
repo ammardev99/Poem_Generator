@@ -19,6 +19,7 @@ Widget myTitle(String text, [Color? color]) {
 }
 
 Widget myHeading(String text, [Color? color]) {
+
   return Text(
     text,
     style: TextStyle(
@@ -215,6 +216,105 @@ Widget poemCategory(Category category) {
   );
 }
 
+Widget poemOfTheDay(Category category) {
+  return Container(
+    margin: const EdgeInsets.symmetric(vertical: 5),
+    decoration: BoxDecoration(
+      border: Border.all(color: primaryColor03),
+      borderRadius: BorderRadius.circular(8),
+    ),
+    child: InkWell(
+      onTap: () {
+        Get.to(const PoemInfo());
+      },
+      borderRadius: BorderRadius.circular(8),
+      hoverColor: whiteColor,
+      splashColor: primaryColor03,
+      child: Stack(
+        children: [
+// main card
+          Row(
+            children: [
+              Container(
+                width: 120,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: category.color,
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(8),
+                    bottomLeft: Radius.circular(8),
+                  ),
+                  image: const DecorationImage(
+                      image: AssetImage(
+                        'images/poem_image.png',
+                      ),
+                      fit: BoxFit.cover),
+                ),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                  child: ListTile(
+                contentPadding: EdgeInsets.zero,
+                title: SizedBox(
+                    height: 30, child: myHeading(category.title, primaryColor)),
+                subtitle: RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: ' Author: ',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: borderColor,
+                        ),
+                      ),
+                      TextSpan(
+                        text: 'Name',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: secondaryColor,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
+                  ),
+            ],
+          ),
+// over layer Fav and likes
+          Positioned(
+              right: 0,
+              top: 0,
+              child: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.favorite_border,
+                    color: borderColor,
+                  ))),
+
+          Positioned(
+              right: 5,
+              bottom: 5,
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.thumb_up_alt_outlined,
+                    color: borderColor,
+                    size: 15,
+                  ),
+                  sizeBox(5),
+                  info('1214 likes')
+                ],
+              )),
+        ],
+      ),
+// end overlayer
+    ),
+  );
+}
+
 Widget iconWithLabel(IconData icon, String label) {
   return Row(
     mainAxisSize: MainAxisSize.min,
@@ -294,6 +394,59 @@ Widget poemPost(BuildContext context) {
             ],
           ),
         ],
+      ),
+    ),
+  );
+}
+
+Widget categoriesButtons() {
+  return SingleChildScrollView(
+    scrollDirection: Axis.horizontal, // Ensures horizontal scrolling
+    child: Row(
+      children: [
+        categoryButton("New Poems"),
+        sizeBox(5),
+        categoryButton("Poems"),
+        sizeBox(5),
+        categoryButton("Happy Poems"),
+        sizeBox(5),
+        categoryButton("Love Poems"),
+        sizeBox(5),
+      ],
+    ),
+  );
+}
+
+Widget categoryButton(String text) {
+  return TextButton(
+    onPressed: () {
+      Get.to(CategoryFeed(name: text));
+    },
+    style: TextButton.styleFrom(
+      foregroundColor: whiteColor,
+      backgroundColor: borderColor,
+      padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(100),
+      ),
+    ),
+    child: Text(text),
+  );
+}
+
+Widget profileWelcom() {
+  return ListTile(
+    title: myHeading("Hi, Filip"),
+    subtitle: info("Looking for specific poem?", secondaryColor),
+    trailing: Container(
+      decoration: BoxDecoration(
+        border: Border.all(color: primaryColor, width: 1),
+        borderRadius: BorderRadius.circular(100),
+      ),
+      child: const CircleAvatar(
+        backgroundImage: AssetImage(
+          'images/author.png',
+        ),
       ),
     ),
   );
