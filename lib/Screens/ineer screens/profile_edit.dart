@@ -14,73 +14,75 @@ class _EditProfileState extends State<EditProfile> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          leading: BackButton(
-            color: whiteColor,
+    return SafeArea(
+      child: Scaffold(
+          appBar: AppBar(
+            leading: BackButton(
+              color: whiteColor,
+            ),
+            backgroundColor: primaryColor,
+            centerTitle: true,
+            title: myHeading("Edit Profile", whiteColor),
           ),
-          backgroundColor: primaryColor,
-          centerTitle: true,
-          title: myHeading("Edit Profile", whiteColor),
-        ),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              profileImage(context),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    myHeading('User Name'),
-                    sizeBox(5),
-                    TextField(decoration: editProfileinputStyle("Full Name")),
-                    sizeBox(15),
-                    myHeading('Email'),
-                    sizeBox(5),
-                    TextField(
-                        decoration: editProfileinputStyle("email@gmail.com")),
-                    sizeBox(15),
-                    myHeading('Contact'),
-                    sizeBox(5),
-                    TextField(
-                        decoration: editProfileinputStyle("Phone Number")),
-                    sizeBox(15),
-                    myHeading('Age'),
-                    sizeBox(5),
-                    TextField(decoration: editProfileinputStyle("Years")),
-                    sizeBox(15),
-                    selectLength(),
-                    sizeBox(15),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStatePropertyAll(primaryColor),
-                            padding: MaterialStatePropertyAll(
-                                EdgeInsets.symmetric(
-                                    horizontal:
-                                        MediaQuery.of(context).size.width / 3,
-                                    vertical: 20)),
+          body: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                profileImage(context),
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      myHeading('User Name'),
+                      sizeBox(5),
+                      TextField(decoration: editProfileinputStyle("Full Name")),
+                      sizeBox(15),
+                      myHeading('Email'),
+                      sizeBox(5),
+                      TextField(
+                          decoration: editProfileinputStyle("email@gmail.com")),
+                      sizeBox(15),
+                      myHeading('Contact'),
+                      sizeBox(5),
+                      TextField(
+                          decoration: editProfileinputStyle("Phone Number")),
+                      sizeBox(15),
+                      myHeading('Age'),
+                      sizeBox(5),
+                      TextField(decoration: editProfileinputStyle("Years")),
+                      sizeBox(15),
+                      selectLength(),
+                      sizeBox(15),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStatePropertyAll(primaryColor),
+                              padding: MaterialStatePropertyAll(
+                                  EdgeInsets.symmetric(
+                                      horizontal:
+                                          MediaQuery.of(context).size.width / 3,
+                                      vertical: 15)),
+                            ),
+                            child: myHeading("Update", whiteColor),
                           ),
-                          child: myHeading("Update", whiteColor),
-                        ),
-                      ],
-                    ),
-                    sizeBox(20),
-                  ],
+                        ],
+                      ),
+                      sizeBox(20),
+                    ],
+                  ),
                 ),
-              ),
-            sizeBox(40)
-            ],
-
-          ),
-        ));
+              sizeBox(40)
+              ],
+      
+            ),
+          )),
+    );
   }
 
   Stack profileImage(BuildContext context) {
@@ -133,7 +135,6 @@ class _EditProfileState extends State<EditProfile> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         myHeading("Gender:", secondaryColor),
-        sizeBox(5),
         Radio(
           activeColor: primaryColor,
           splashRadius: 0,

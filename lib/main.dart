@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/Screens/onboarding/onboarding.dart';
 import 'package:poem_generator/components/assets.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle( SystemUiOverlayStyle(
+    statusBarColor: lightColor, // Set your desired status bar color
+    statusBarBrightness: Brightness.light, // Set status bar text brightness (light or dark)
+  ));
   runApp(const MyApp());
+  
 }
 
 class MyApp extends StatelessWidget {
@@ -23,3 +29,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+
+

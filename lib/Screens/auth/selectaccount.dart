@@ -11,28 +11,30 @@ class SelectAccount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: ListView(
-          children: [
-            sizeBox(10),
-            Image.asset("images/logo.png"),
-            sizeBox(10),
-            myTitle("Let's you in"),
-            sizeBox(20),
-            guestOption("Start as a Guest", const Home()),
-            sizeBox(20),
-            startOption("Continue with Facebook",Icons.facebook,),
-            sizeBox(20),
-            startOption("Continue with Google",Icons.g_mobiledata,),
-            sizeBox(20),
-            startOption("Continue with Apple",Icons.apple,),
-            sizeBox(40),
-            moveButtom("Sign in",context,const Login(),"m",),
-            infoAction("Don't have an  account?", "Sign up", const Signup(),)
-          ],
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(),
+        body: Padding(
+          padding: const EdgeInsets.all(20),
+          child: ListView(
+            children: [
+              sizeBox(10),
+              Image.asset("images/logo.png"),
+              sizeBox(10),
+              myTitle("Let's you in"),
+              sizeBox(20),
+              guestOption("Start as a Guest", const Home()),
+              sizeBox(20),
+              startOption("Continue with Facebook",Icons.facebook,),
+              sizeBox(20),
+              startOption("Continue with Google",Icons.g_mobiledata,),
+              sizeBox(20),
+              startOption("Continue with Apple",Icons.apple,),
+              sizeBox(40),
+              moveButtom("Sign in",context,const Login(),"m",),
+              infoAction("Don't have an  account?", "Sign up", const Signup(),)
+            ],
+          ),
         ),
       ),
     );

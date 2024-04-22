@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // App Colors
 Color primaryColor = const Color(0xFFF57760);
 Color primaryColor03 = primaryColor.withOpacity(0.3);
+Color lightColor = const Color(0xFFF9ADA0);
 Color secondaryColor = const Color(0xFF374151);
 Color whiteColor = const Color(0xFFFFFFFF);
 Color borderColor = const Color(0xFFAEAEAE);
@@ -48,28 +49,27 @@ InputDecoration inputStyle(
 }
 
 // Edit profile input style
-InputDecoration editProfileinputStyle(String hint
-) {
+InputDecoration editProfileinputStyle(String hint) {
   return InputDecoration(
-                      contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 0),
-                      hintText: hint,
-                      hintStyle: TextStyle(color: borderColor),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(100),
-                        borderSide: BorderSide(
-                          color: borderColor,
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(100),
-                        borderSide: BorderSide(
-                          color: primaryColor,
-                        ),
-                      ),
-                    );
+    contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+    hintText: hint,
+    hintStyle: TextStyle(color: borderColor),
+    border: OutlineInputBorder(
+      // borderRadius: BorderRadius.circular(100),
+      borderRadius: BorderRadius.circular(10),
+      borderSide: BorderSide(
+        color: borderColor,
+      ),
+    ),
+    focusedBorder: OutlineInputBorder(
+      // borderRadius: BorderRadius.circular(100),
+      borderRadius: BorderRadius.circular(10),
+      borderSide: BorderSide(
+        color: primaryColor,
+      ),
+    ),
+  );
 }
-
 
 // Search container
 Decoration searchDecoration(Color color, Color borderColor) {
@@ -79,18 +79,29 @@ Decoration searchDecoration(Color color, Color borderColor) {
       border: Border.all(color: borderColor));
 }
 
-
-InputDecoration searchStyle(String hint, Color hintColor, Color fillColor , IconData icon ) {
+InputDecoration searchStyle(
+    String hint, Color hintColor, Color fillColor, IconData icon) {
   return InputDecoration(
     hintText: hint,
     hintStyle: TextStyle(color: hintColor, fontWeight: FontWeight.normal),
     contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-    suffixIcon: IconButton(onPressed: (){}, icon: Icon(
+    suffixIcon: IconButton(
+      onPressed: () {},
+      icon: Icon(
         icon,
         color: hintColor,
-      ),),
+      ),
+    ),
     border: InputBorder.none,
     fillColor: fillColor,
     focusColor: borderColor,
+  );
+}
+
+ButtonStyle nextButtonStyle(BuildContext context) {
+  return ButtonStyle(
+    backgroundColor: MaterialStatePropertyAll(primaryColor),
+    padding: MaterialStatePropertyAll(EdgeInsets.symmetric(
+        horizontal: MediaQuery.of(context).size.width / 3.5, vertical: 15)),
   );
 }

@@ -22,13 +22,13 @@ class _GenratePoemState extends State<GenratePoem> {
           children: [
             // top option
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               width: MediaQuery.of(context).size.width,
               color: primaryColor,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  sizeBox(40),
+                  sizeBox(60),
                   myHeading("Poem Genrator", whiteColor),
                   const SizedBox(
                     height: 10,
@@ -37,6 +37,7 @@ class _GenratePoemState extends State<GenratePoem> {
                   const SizedBox(
                     height: 10,
                   ),
+                  myHeading("Length:", whiteColor),
                   selectLength(),
                   const SizedBox(
                     height: 20,
@@ -77,10 +78,8 @@ class _GenratePoemState extends State<GenratePoem> {
 
   Row selectLength() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        myHeading("Length:", whiteColor),
-        sizeBox(5),
         Radio(
           activeColor: whiteColor,
           splashRadius: 0,

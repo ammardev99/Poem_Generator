@@ -4,9 +4,11 @@ class Favorite extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Favorite"),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Favorite"),
+        ),
       ),
     );
   }

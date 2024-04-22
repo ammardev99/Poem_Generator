@@ -6,7 +6,7 @@ import 'package:poem_generator/Screens/ineer%20screens/profile_edit.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/models/category_model.dart';
 
-Widget myTitle(String text, [Color? color]) {
+Widget myTitle(String text,  [Color? color]   ) {
   return Text(
     text,
     style: TextStyle(

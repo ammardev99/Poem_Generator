@@ -30,65 +30,74 @@ class _OnBoardingState extends State<OnBoarding> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(40),
-        child: PageView.builder(
-          controller: _controller,
-          itemCount: onBoardingScreen.length,
-          onPageChanged: (int index) {
-            setState(() {
-              currentIndex = index;
-            });
-          },
-          itemBuilder: (_, index) {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Align(
-                    alignment: Alignment.centerRight,
-                    child: TextButton(
-                        onPressed: () {
-                          setState(() {
-                            Get.offAll(const SelectAccount());
-                          });
-                        },
-                        child: info("Skip", borderColor))),
-                sizeBox(40),
-                SvgPicture.asset(onBoardingScreen[index].image),
-                sizeBox(40),
-                myTitle(onBoardingScreen[index].title, secondaryColor),
-                const Spacer(),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: List.generate(
-                    onBoardingScreen.length,
-                    (index) => buildDot(index),
-                  ),
-                ),
-                sizeBox(20),
-                ElevatedButton(
-                  onPressed: () {
+    return SafeArea(
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.all(40),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+//Skip
+              Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                      onPressed: () {
+                        setState(() {
+                          Get.offAll(const SelectAccount());
+                        });
+                      },
+                      child: info("Skip", borderColor))),
+              sizeBox(40),
+              Expanded(
+                child: PageView.builder(
+                  controller: _controller,
+                  itemCount: onBoardingScreen.length,
+                  onPageChanged: (int index) {
                     setState(() {
-                      if (currentIndex < onBoardingScreen.length - 1) {
-                        _controller.animateToPage(
-                          currentIndex + 1,
-                          duration: const Duration(milliseconds: 300),
-                          curve: Curves.easeIn,
-                        );
-                      } else {
-                        Get.offAll(const SelectAccount());
-                      }
+                      currentIndex = index;
                     });
                   },
-                  style: buttonstyle(),
-                  child: Text(currentIndex == onBoardingScreen.length - 1
-                      ? "Continue"
-                      : "Next"),
+                  itemBuilder: (_, index) {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        SvgPicture.asset(onBoardingScreen[index].image),
+                        sizeBox(40),
+                        Container(child: myTitle(onBoardingScreen[index].title, secondaryColor)),
+                      ],
+                    );
+                  },
                 ),
-              ],
-            );
-          },
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(
+                  onBoardingScreen.length,
+                  (index) => buildDot(index),
+                ),
+              ),
+              sizeBox(20),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    if (currentIndex < onBoardingScreen.length - 1) {
+                      _controller.animateToPage(
+                        currentIndex + 1,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeIn,
+                      );
+                    } else {
+                      Get.offAll(const SelectAccount());
+                    }
+                  });
+                },
+                style: buttonstyle(),
+                child: Text(currentIndex == onBoardingScreen.length - 1
+                    ? "Continue"
+                    : "Next"),
+              ),
+            ],
+          ),
         ),
       ),
     );
