@@ -39,6 +39,8 @@ dependencies:
   get: ^4.6.6
   awesome_bottom_bar: ^1.2.4
   url_launcher: ^6.2.6
+  share_it: ^0.7.0
+  share_me: ^0.0.17
 
 dev_dependencies:
   flutter_test:

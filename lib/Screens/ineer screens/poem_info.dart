@@ -12,28 +12,30 @@ class PoemInfo extends StatefulWidget {
 class _PoemInfoState extends State<PoemInfo> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          leading: BackButton(
-            color: whiteColor,
-          ),
-          backgroundColor: primaryColor,
-          centerTitle: true,
-        ),
-        body: Column(
-          children: [
-            Stack(
-              children: [
-                Container(
-                  height: 180,
-                  width: MediaQuery.of(context).size.width,
-                  color: primaryColor,
-                ),
-                poemCard(context),
-              ],
+    return SafeArea(
+      child: Scaffold(
+          appBar: AppBar(
+            leading: BackButton(
+              color: whiteColor,
             ),
-          ],
-        ));
+            backgroundColor: primaryColor,
+            centerTitle: true,
+          ),
+          body: Column(
+            children: [
+              Stack(
+                children: [
+                  Container(
+                    height: 180,
+                    width: MediaQuery.of(context).size.width,
+                    color: primaryColor,
+                  ),
+                  poemCard(context),
+                ],
+              ),
+            ],
+          )),
+    );
   }
 }
 

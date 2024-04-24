@@ -14,38 +14,35 @@ class _ExploreState extends State<Explore> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
+      body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: ListView(
-          children: [
-            sizeBox(20),
-            profileWelcom(),
-            sizeBox(10),
-            searchBar(),
-            sizeBox(10),
-            myHeading("Poem of the day"),
-            poemOfTheDay(categoriesList[1]),
-            sizeBox(10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                myHeading("Categories"),
-                // GestureDetector(onTap: () {}, child: info("See all"))
-              ],
-            ),
-            sizeBox(10),
-            categoriesButtons(),
-            sizeBox(20),
-            poemPost(context),
-            sizeBox(10),
-            poemPost(context),
-            sizeBox(10),
-            poemPost(context),
-            sizeBox(10),
-
-            ///
-          ],
-        ),
+        children: [
+          sizeBox(40),
+          profileWelcom(),
+          sizeBox(10),
+          searchBar(),
+          sizeBox(10),
+          myHeading("Poem of the day"),
+          poemOfTheDay(categoriesList[1]),
+          sizeBox(10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              myHeading("Categories"),
+              // GestureDetector(onTap: () {}, child: info("See all"))
+            ],
+          ),
+          sizeBox(10),
+          categoriesButtons(),
+          sizeBox(20),
+          poemPost(context),
+          sizeBox(10),
+          poemPost(context),
+          sizeBox(10),
+          poemPost(context),
+          sizeBox(10),
+          sizeBox(80),
+        ],
       ),
     );
   }

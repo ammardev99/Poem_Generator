@@ -6,7 +6,7 @@ import 'package:poem_generator/components/assets.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle( SystemUiOverlayStyle(
-    statusBarColor: lightColor, // Set your desired status bar color
+    statusBarColor: primaryColor, // Set your desired status bar color
     statusBarBrightness: Brightness.light, // Set status bar text brightness (light or dark)
   ));
   runApp(const MyApp());

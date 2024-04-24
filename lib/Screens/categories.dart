@@ -23,26 +23,28 @@ class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-          appBar: AppBar(
-            title: myHeading("All Poems", whiteColor),
-            backgroundColor: primaryColor,
-          ),
-          body: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Column(
-                children: [
-                  Expanded(
-                    child: ListView.builder(
-                      itemCount: categoriesList.length,
-                      itemBuilder: (context, index) {
-                        return poemCategory(categoriesList[index]);
-                      },
+      child: SafeArea(
+        child: Scaffold(
+            appBar: AppBar(
+              title: myHeading("All Poems", whiteColor),
+              backgroundColor: primaryColor,
+            ),
+            body: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: categoriesList.length,
+                        itemBuilder: (context, index) {
+                          return poemCategory(categoriesList[index]);
+                        },
+                      ),
                     ),
-                  ),
-                ],
-              )),
-              ),
+                  ],
+                )),
+                ),
+      ),
     );
   }
 }
