@@ -100,6 +100,7 @@ class _EditProfileState extends State<EditProfile> {
               width: MediaQuery.of(context).size.width,
               color: Colors.transparent,
             ),
+
           ],
         ),
         Positioned(

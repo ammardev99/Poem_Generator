@@ -28,7 +28,6 @@ Widget myHeading(String text, [Color? color]) {
       fontWeight: FontWeight.w500,
       color: color ?? blackColor,
     ),
-//  textAlign: TextAlign.center,
   );
 }
 

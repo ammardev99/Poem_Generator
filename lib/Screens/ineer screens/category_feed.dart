@@ -22,6 +22,7 @@ class CategoryFeed extends StatelessWidget {
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: ListView(
+              physics: const BouncingScrollPhysics(),
               children: [
                 sizeBox(20),
                 poemPost(context),

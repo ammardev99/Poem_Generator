@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 // App Colors
 Color primaryColor = const Color(0xFFF57760);
 Color primaryColor03 = primaryColor.withOpacity(0.3);
-Color lightColor = const Color(0xFFF9ADA0);
 Color secondaryColor = const Color(0xFF374151);
 Color whiteColor = const Color(0xFFFFFFFF);
 Color borderColor = const Color(0xFFAEAEAE);

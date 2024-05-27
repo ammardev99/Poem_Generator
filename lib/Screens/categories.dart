@@ -35,6 +35,7 @@ class _CategoriesState extends State<Categories> {
                   children: [
                     Expanded(
                       child: ListView.builder(
+                        physics: const BouncingScrollPhysics(),
                         itemCount: categoriesList.length,
                         itemBuilder: (context, index) {
                           return poemCategory(categoriesList[index]);
