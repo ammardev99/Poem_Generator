@@ -71,7 +71,7 @@ Widget poemCard(BuildContext context) {
                 ),
                 child: const CircleAvatar(
                   radius: 40,
-                  backgroundImage: AssetImage('images/author.png'),
+                  backgroundImage: AssetImage('assets/png/author.png'),
                 ),
               ),
               sizeBox(10),

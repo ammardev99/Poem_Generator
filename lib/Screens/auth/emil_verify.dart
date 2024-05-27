@@ -21,7 +21,7 @@ class EmailVerify extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const SizedBox(height: 40), // Use SizedBox for consistent spacing
-                Image.asset("images/logo.png"),
+                Image.asset("assets/png/logo.png"),
                 const SizedBox(height: 10), // Use SizedBox for consistent spacing
                 myTitle("Forgot Password", secondaryColor),
                 info("Enter email to varify your account"),

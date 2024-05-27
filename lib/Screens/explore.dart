@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
-import 'package:poem_generator/models/category_model.dart';
 
 class Explore extends StatefulWidget {
   const Explore({super.key});
@@ -22,8 +21,8 @@ class _ExploreState extends State<Explore> {
           sizeBox(10),
           searchBar(),
           sizeBox(10),
-          myHeading("Poem of the day"),
-          poemOfTheDay(categoriesList[1]),
+          // myHeading("Poem of the day"),
+          // poemOfTheDay(categoriesList[1]),
           sizeBox(10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

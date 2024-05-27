@@ -65,11 +65,9 @@ class _GenratePoemState extends State<GenratePoem> {
                 ],
               ),
             ),
-
             sizeBox(40),
-
             // Genrate poem here
-            SvgPicture.asset('images/empty.svg'),
+            SvgPicture.asset('assets/svg/empty.svg'),
           ],
         ),
       ),

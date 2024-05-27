@@ -19,7 +19,7 @@ class OTP extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const SizedBox(height: 40), 
-                Image.asset("images/logo.png"),
+                Image.asset("assets/png/logo.png"),
                 const SizedBox(height: 10), 
                 myTitle("Enter OTP", secondaryColor),
                 info("Enter your OTP code here to varify"),

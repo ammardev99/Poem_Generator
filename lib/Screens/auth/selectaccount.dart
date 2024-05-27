@@ -19,7 +19,7 @@ class SelectAccount extends StatelessWidget {
           child: ListView(
             children: [
               sizeBox(10),
-              Image.asset("images/logo.png"),
+              Image.asset("assets/png/logo.png"),
               sizeBox(10),
               myTitle("Let's you in"),
               sizeBox(20),

@@ -113,7 +113,7 @@ class _EditProfileState extends State<EditProfile> {
                     border: Border.all(width: 3, color: primaryColor03),
                     borderRadius: BorderRadius.circular(100)),
                 child: const CircleAvatar(
-                  backgroundImage: AssetImage('images/author.png'),
+                  backgroundImage: AssetImage('assets/png/author.png'),
                   maxRadius: 60,
                 ),
               ),

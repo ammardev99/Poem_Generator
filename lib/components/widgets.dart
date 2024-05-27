@@ -407,7 +407,7 @@ Widget poemPost(BuildContext context) {
                   border: Border.all(width: 2, color: primaryColor03),
                   borderRadius: BorderRadius.circular(100)),
               child: const CircleAvatar(
-                backgroundImage: AssetImage('images/author.png'),
+                backgroundImage: AssetImage('assets/png/author.png'),
               ),
             ),
             title: myHeading("Name", secondaryColor),
@@ -495,7 +495,7 @@ Widget profileWelcom() {
       ),
       child: const CircleAvatar(
         backgroundImage: AssetImage(
-          'images/author.png',
+          'assets/png/author.png',
         ),
       ),
     ),

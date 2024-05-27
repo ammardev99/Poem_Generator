@@ -13,7 +13,7 @@ class NotFound extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Image.asset('images/logo.png'),
+          Image.asset('assets/png/logo.png'),
           myTitle("Page Not Found", primaryColor),
         ],
       ),
