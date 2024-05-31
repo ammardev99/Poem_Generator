@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
 import 'package:poem_generator/modules/categories/view.dart';
+import 'package:poem_generator/modules/favorite/view.dart';
 import 'package:poem_generator/modules/genrate/view.dart';
 import 'package:poem_generator/modules/home/view.dart';
 import 'menu.dart';
-import 'favorite.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -30,7 +30,7 @@ final screen=[
 HomePage(),
 CategoriesPage(),
 GenratePage() ,
-const Favorite(),
+FavoritePage(),
 const Menu(),
 ];
 
