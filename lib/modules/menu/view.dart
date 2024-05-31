@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/Screens/ineer%20screens/aboutus.dart';
 import 'package:poem_generator/Screens/ineer%20screens/contactus.dart';
-import 'package:poem_generator/Screens/ineer%20screens/help.dart';
 import 'package:poem_generator/Screens/onboarding/onboarding.dart';
 import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/modules/editprofile/view.dart';
+import 'package:poem_generator/modules/help/view.dart';
 
 import 'logic.dart';
 
@@ -27,7 +27,7 @@ class MenuPage extends StatelessWidget {
           menuOption(Icons.star_border,'Rate App',context,),
           shareOption(Icons.share,'Share This App','share',),
           redirectOption(Icons.devices_other,'Other Apps','https://play.google.com/store/apps/developer?id=samz+creation&hl=en&gl=US'),
-          menuOption(Icons.help_outline,'Help',context,const Help()),
+          menuOption(Icons.help_outline,'Help',context, HelpPage()),
           menuOption(Icons.info_outline,'About us',context,const AboutUs()),
           menuOption(Icons.support_agent,'Contact us',context,const ContactUs()),
           menuOption(Icons.logout, 'Log out', context, const OnBoarding()),
