@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/Screens/ineer%20screens/category_feed.dart';
 import 'package:poem_generator/Screens/ineer%20screens/poem_info.dart';
-import 'package:poem_generator/Screens/ineer%20screens/profile_edit.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/models/category_model.dart';
+import 'package:poem_generator/modules/editprofile/view.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share_it/share_it.dart';
 
@@ -193,7 +193,7 @@ Widget userProfile(
           subtitle: info(email, whiteColor),
           trailing: IconButton(
             onPressed: () {
-              Get.to(const EditProfile());
+              Get.to( EditprofilePage());
             },
             icon: Icon(
               Icons.edit,

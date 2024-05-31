@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:poem_generator/Screens/menu.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
 import 'package:poem_generator/modules/categories/view.dart';
 import 'package:poem_generator/modules/favorite/view.dart';
 import 'package:poem_generator/modules/genrate/view.dart';
 import 'package:poem_generator/modules/home/view.dart';
+import 'package:poem_generator/modules/menu/view.dart';
 
 class PoemApp extends StatefulWidget {
   const PoemApp({super.key});
@@ -31,7 +31,7 @@ final screen=[
 CategoriesPage(),
 GenratePage(),
 FavoritePage(),
-const Menu(),
+MenuPage(),
 ];
 
   @override

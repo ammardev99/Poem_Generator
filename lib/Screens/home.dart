@@ -5,7 +5,7 @@ import 'package:poem_generator/modules/categories/view.dart';
 import 'package:poem_generator/modules/favorite/view.dart';
 import 'package:poem_generator/modules/genrate/view.dart';
 import 'package:poem_generator/modules/home/view.dart';
-import 'menu.dart';
+import 'package:poem_generator/modules/menu/view.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -31,7 +31,7 @@ HomePage(),
 CategoriesPage(),
 GenratePage() ,
 FavoritePage(),
-const Menu(),
+MenuPage(),
 ];
 
   @override
