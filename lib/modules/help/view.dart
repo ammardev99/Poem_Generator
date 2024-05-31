@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/Screens/ineer%20screens/contactus.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/modules/contactus/view.dart';
 
 import 'logic.dart';
 
@@ -86,7 +86,7 @@ class HelpPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () => Get.to(const ContactUs()),
+                    onPressed: () => Get.to(ContactusPage()),
                     style: nextButtonStyle(context),
                     child: myHeading("Send a message", whiteColor),
                   ),
