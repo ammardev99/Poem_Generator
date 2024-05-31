@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/Screens/auth/selectaccount.dart';
+import 'package:poem_generator/modules/auth/selectaccount.dart';
 import 'package:poem_generator/Screens/home.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
