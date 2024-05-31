@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/Screens/auth/emil_verify.dart';
-import 'package:poem_generator/Screens/auth/signup.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/modules/auth/signup/view.dart';
 import 'package:poem_generator/modules/home/view.dart';
 
 import 'logic.dart';
@@ -98,7 +98,7 @@ class LoginPage extends StatelessWidget {
                 infoAction(
                   "Don't have an account?",
                   "Sign up",
-                  const Signup(),
+                  SignupPage(),
                 ),
               ],
             ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/modules/auth/opt/view.dart';
+import 'package:poem_generator/modules/auth/signup/view.dart';
 
-import 'otp.dart';
-import 'signup.dart';
 
 class EmailVerify extends StatelessWidget {
   const EmailVerify({super.key});
@@ -31,13 +31,13 @@ class EmailVerify extends StatelessWidget {
                   decoration: inputStyle(Icons.email, 'Email'),
                 ),
                 const SizedBox(height: 20),
-                moveButtom("Verify", context, const OTP(), 'm'),
+                moveButtom("Verify", context, OptPage(), 'm'),
                 // enter password
                 sizeBox(10),
                 infoAction(
                   "Don't have an account?",
                   "Sign up",
-                  const Signup(),
+                  SignupPage(),
                 ),
               ],
             ),
