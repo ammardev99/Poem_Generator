@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
+import 'package:poem_generator/modules/categories/view.dart';
 import 'package:poem_generator/modules/home/view.dart';
-import 'categories.dart';
 import 'menu.dart';
 import 'favorite.dart';
 import 'genrate.dart';
@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
 // main screens for app navigation 
 final screen=[
 HomePage(),
-const Categories() ,
+CategoriesPage(),
 const GenratePoem() ,
 const Favorite(),
 const Menu(),
