@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/Screens/auth/emil_verify.dart';
 import 'package:poem_generator/Screens/home.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/modules/auth/mailverify/view.dart';
 
 import 'logic.dart';
 
@@ -47,7 +47,7 @@ class OptPage extends StatelessWidget {
                 infoAction(
                   "Don't get code?",
                   "Resend Code",
-                  const EmailVerify(),
+                  MailverifyPage(),
                 ),
               ],
             ),

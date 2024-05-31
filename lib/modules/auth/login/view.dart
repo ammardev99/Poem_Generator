@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/Screens/auth/emil_verify.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/modules/auth/mailverify/view.dart';
 import 'package:poem_generator/modules/auth/signup/view.dart';
 import 'package:poem_generator/modules/home/view.dart';
 
@@ -91,7 +91,7 @@ class LoginPage extends StatelessWidget {
                 sizeBox(10),
                 GestureDetector(
                     onTap: () {
-                      Get.to(const EmailVerify());
+                      Get.to( MailverifyPage());
                     },
                     child: myHeading("Forgot the password?", secondaryColor)),
                 sizeBox(10),
