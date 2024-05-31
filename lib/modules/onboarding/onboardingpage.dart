@@ -6,14 +6,14 @@ import 'package:poem_generator/models/onboarding_model.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
 
-class OnBoarding extends StatefulWidget {
-  const OnBoarding({super.key});
+class OnBoardingPage extends StatefulWidget {
+  const OnBoardingPage({super.key});
 
   @override
-  State<OnBoarding> createState() => _OnBoardingState();
+  State<OnBoardingPage> createState() => _OnBoardingPageState();
 }
 
-class _OnBoardingState extends State<OnBoarding> {
+class _OnBoardingPageState extends State<OnBoardingPage> {
   int currentIndex = 0;
   PageController _controller = PageController();
   @override

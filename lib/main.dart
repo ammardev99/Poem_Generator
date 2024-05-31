@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/Screens/onboarding/onboarding.dart';
 import 'package:poem_generator/components/assets.dart';
+import 'package:poem_generator/modules/onboarding/onboardingpage.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle( SystemUiOverlayStyle(
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
         useMaterial3: true,
       ),
-      home: const OnBoarding(),
+      home: const OnBoardingPage(),
     );
   }
 }
