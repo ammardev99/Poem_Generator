@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:poem_generator/Screens/home.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/modules/poem_app.dart';
 
 import 'login.dart';
 import 'signup.dart';
@@ -23,7 +23,7 @@ class SelectAccount extends StatelessWidget {
               sizeBox(10),
               myTitle("Let's you in"),
               sizeBox(20),
-              guestOption("Start as a Guest", const Home()),
+              guestOption("Start as a Guest", const PoemApp()),
               sizeBox(20),
               startOption("Continue with Facebook",Icons.facebook,),
               sizeBox(20),

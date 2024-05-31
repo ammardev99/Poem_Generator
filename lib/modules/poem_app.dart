@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:poem_generator/Screens/categories.dart';
+import 'package:poem_generator/Screens/favorite.dart';
+import 'package:poem_generator/Screens/genrate.dart';
+import 'package:poem_generator/Screens/menu.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
 import 'package:poem_generator/modules/home/view.dart';
-import 'categories.dart';
-import 'menu.dart';
-import 'favorite.dart';
-import 'genrate.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class PoemApp extends StatefulWidget {
+  const PoemApp({super.key});
   @override
-  State<Home> createState() => _HomeState();
+  State<PoemApp> createState() => _PoemAppState();
 }
 
-class _HomeState extends State<Home> {
+class _PoemAppState extends State<PoemApp> {
     int _selectedScreenIndex = 0;
 
   // items/icon list for BottomAppBar
@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
 
 // main screens for app navigation 
 final screen=[
-HomePage(),
+ HomePage(),
 const Categories() ,
 const GenratePoem() ,
 const Favorite(),
