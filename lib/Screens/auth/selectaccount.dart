@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/modules/auth/login/view.dart';
 import 'package:poem_generator/modules/poem_app.dart';
 
-import 'login.dart';
 import 'signup.dart';
 
 class SelectAccount extends StatelessWidget {
@@ -31,7 +31,7 @@ class SelectAccount extends StatelessWidget {
               sizeBox(20),
               startOption("Continue with Apple",Icons.apple,),
               sizeBox(40),
-              moveButtom("Sign in",context,const Login(),"m",),
+              moveButtom("Sign in",context,LoginPage(),"m",),
               infoAction("Don't have an  account?", "Sign up", const Signup(),)
             ],
           ),

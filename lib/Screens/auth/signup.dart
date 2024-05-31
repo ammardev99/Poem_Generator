@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/Screens/auth/login.dart';
 import 'package:poem_generator/Screens/auth/selectaccount.dart';
 import 'package:poem_generator/Screens/home.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/modules/auth/login/view.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -100,7 +100,7 @@ class _SignupState extends State<Signup> {
                 infoAction(
                   "Do you have an account?",
                   "Sign in",
-                  const Login(),
+                  LoginPage(),
                 ),
               ],
             ),
