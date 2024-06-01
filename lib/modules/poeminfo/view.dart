@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
@@ -16,10 +16,10 @@ class PoeminfoPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            leading: BackButton(
-              color: whiteColor,
+            leading: const BackButton(
+              color: AppColors.whiteColor,
             ),
-            backgroundColor: primaryColor,
+            backgroundColor: AppColors.primaryColor,
             centerTitle: true,
           ),
           body: Column(
@@ -29,7 +29,7 @@ class PoeminfoPage extends StatelessWidget {
                   Container(
                     height: 180,
                     width: MediaQuery.of(context).size.width,
-                    color: primaryColor,
+                    color: AppColors.primaryColor,
                   ),
                   poemCard(context),
                 ],
@@ -45,7 +45,7 @@ Widget poemCard(BuildContext context) {
     margin: const EdgeInsets.all(20),
     decoration: BoxDecoration(boxShadow: [
       BoxShadow(
-        color: borderColor.withOpacity(0.5),
+        color: AppColors.borderColor.withOpacity(0.5),
         spreadRadius: 1,
         blurRadius: 3,
         offset: const Offset(0, 1),
@@ -55,8 +55,8 @@ Widget poemCard(BuildContext context) {
       padding: const EdgeInsets.all(8),
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-          color: whiteColor,
-          border: Border.all(width: 2, color: primaryColor03),
+          color: AppColors.whiteColor,
+          border: Border.all(width: 2, color: AppColors.primaryColor03),
           borderRadius: BorderRadius.circular(8)),
       child: Column(
         children: [
@@ -66,8 +66,8 @@ Widget poemCard(BuildContext context) {
               sizeBox(10),
               Container(
                 decoration: BoxDecoration(
-                  color: whiteColor,
-                  border: Border.all(width: 2, color: primaryColor03),
+                  color: AppColors.whiteColor,
+                  border: Border.all(width: 2, color: AppColors.primaryColor03),
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: const CircleAvatar(
@@ -78,7 +78,7 @@ Widget poemCard(BuildContext context) {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  myHeading("Fillip Justic", secondaryColor),
+                  myHeading("Fillip Justic", AppColors.secondaryColor),
                   const Spacer(),
                   const Icon(Icons.access_time_outlined, size: 15),
                   sizeBox(4),
@@ -96,7 +96,7 @@ Widget poemCard(BuildContext context) {
           ),
           sizeBox(10),
           Divider(
-            color: primaryColor03,
+            color: AppColors.primaryColor03,
             indent: 1,
             endIndent: 1,
           ),

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/modules/contactus/view.dart';
+import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
@@ -39,12 +40,12 @@ class HelpPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leading: BackButton(
-            color: whiteColor,
+          leading: const BackButton(
+            color: AppColors.whiteColor,
           ),
-          title: myHeading("Help", whiteColor),
+          title: myHeading("Help", AppColors.whiteColor),
           centerTitle: true,
-          backgroundColor: primaryColor,
+          backgroundColor: AppColors.primaryColor,
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -54,7 +55,7 @@ class HelpPage extends StatelessWidget {
               sizeBox(20),
               myTitle(
                 "We’re here to help you with anything and everyting on Poem Generator",
-                secondaryColor,
+                AppColors.secondaryColor,
               ),
               sizeBox(5),
               info(
@@ -68,7 +69,7 @@ class HelpPage extends StatelessWidget {
                     final faqItem = faqs[index];
                     return ExpansionTile(
                       title: myHeading(faqItem.question),
-                      collapsedIconColor: primaryColor,
+                      collapsedIconColor: AppColors.primaryColor,
                       initiallyExpanded: false,
                       children: [
                         Padding(
@@ -88,7 +89,7 @@ class HelpPage extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () => Get.to(ContactusPage()),
                     style: nextButtonStyle(context),
-                    child: myHeading("Send a message", whiteColor),
+                    child: myHeading("Send a message", AppColors.whiteColor),
                   ),
                 ],
               ),

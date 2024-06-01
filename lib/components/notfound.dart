@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/utils/color.dart';
 
 class NotFound extends StatelessWidget {
   const NotFound({super.key});
@@ -14,7 +14,7 @@ class NotFound extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Image.asset('assets/png/logo.png'),
-          myTitle("Page Not Found", primaryColor),
+          myTitle("Page Not Found", AppColors.primaryColor),
         ],
       ),
     );

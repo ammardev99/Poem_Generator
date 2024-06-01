@@ -5,6 +5,7 @@ import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/modules/auth/mailverify/view.dart';
 import 'package:poem_generator/modules/auth/signup/view.dart';
 import 'package:poem_generator/modules/home/view.dart';
+import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
@@ -34,7 +35,7 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 10),
 
                 const SizedBox(height: 10),
-                myTitle("Login", secondaryColor),
+                myTitle("Login", AppColors.secondaryColor),
                 const SizedBox(height: 20),
                 // enter email
                 TextField(
@@ -46,13 +47,13 @@ class LoginPage extends StatelessWidget {
                   decoration: InputDecoration(
                     contentPadding:
                         const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.lock,
                       size: 20,
-                      color: primaryColor,
+                      color: AppColors.primaryColor,
                     ),
                     hintText: "Password",
-                    hintStyle: TextStyle(color: borderColor),
+                    hintStyle: const TextStyle(color: AppColors.borderColor),
                     suffixIcon: IconButton(
                       hoverColor: Colors.transparent,
                       onPressed: () {
@@ -64,19 +65,19 @@ class LoginPage extends StatelessWidget {
                         showPassword == true
                             ? Icons.visibility
                             : Icons.visibility_off,
-                        color: borderColor,
+                        color: AppColors.borderColor,
                       ),
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(100),
-                      borderSide: BorderSide(
-                        color: borderColor,
+                      borderSide: const BorderSide(
+                        color: AppColors.borderColor,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(100),
-                      borderSide: BorderSide(
-                        color: primaryColor,
+                      borderSide: const BorderSide(
+                        color: AppColors.primaryColor,
                       ),
                     ),
                   ),
@@ -93,7 +94,7 @@ class LoginPage extends StatelessWidget {
                     onTap: () {
                       Get.to( MailverifyPage());
                     },
-                    child: myHeading("Forgot the password?", secondaryColor)),
+                    child: myHeading("Forgot the password?", AppColors.secondaryColor)),
                 sizeBox(10),
                 infoAction(
                   "Don't have an account?",
@@ -125,10 +126,10 @@ class LoginPage extends StatelessWidget {
               //   rememberMe = value!;
               // });
             },
-            activeColor: primaryColor,
+            activeColor: AppColors.primaryColor,
             splashRadius: 0,
-            side: BorderSide(
-              color: primaryColor,
+            side: const BorderSide(
+              color: AppColors.primaryColor,
               width: 2,
             ),
           ),

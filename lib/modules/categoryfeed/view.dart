@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
@@ -16,11 +16,11 @@ class CategoryfeedPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            leading: BackButton(
-              color: whiteColor,
+            leading: const BackButton(
+              color: AppColors.whiteColor,
             ),
             // title: myHeading(name, whiteColor),
-            backgroundColor: primaryColor,
+            backgroundColor: AppColors.primaryColor,
             centerTitle: true,
           ),
           body: Padding(

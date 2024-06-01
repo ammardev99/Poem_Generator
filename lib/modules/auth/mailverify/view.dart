@@ -4,6 +4,7 @@ import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/modules/auth/opt/view.dart';
 import 'package:poem_generator/modules/auth/signup/view.dart';
+import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
@@ -25,10 +26,10 @@ class MailverifyPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const SizedBox(height: 40), // Use SizedBox for consistent spacing
+                const SizedBox(height: 40),
                 Image.asset("assets/png/logo.png"),
-                const SizedBox(height: 10), // Use SizedBox for consistent spacing
-                myTitle("Forgot Password", secondaryColor),
+                const SizedBox(height: 10),
+                myTitle("Forgot Password", AppColors.secondaryColor),
                 info("Enter email to varify your account"),
                 const SizedBox(height: 20),
                 // enter email

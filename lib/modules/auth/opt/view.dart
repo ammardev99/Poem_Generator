@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/modules/auth/mailverify/view.dart';
 import 'package:poem_generator/modules/poem_app.dart';
+import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
@@ -28,7 +28,7 @@ class OptPage extends StatelessWidget {
                 const SizedBox(height: 40), 
                 Image.asset("assets/png/logo.png"),
                 const SizedBox(height: 10), 
-                myTitle("Enter OTP", secondaryColor),
+                myTitle("Enter OTP", AppColors.secondaryColor),
                 info("Enter your OTP code here to varify"),
                 const SizedBox(height: 20),
                 // enter OTP
@@ -70,14 +70,14 @@ class OptPage extends StatelessWidget {
           counterText: "", // Hide character counter
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
-            borderSide: BorderSide(
-              color:primaryColor,
+            borderSide: const BorderSide(
+              color:AppColors.primaryColor,
             ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
-            borderSide: BorderSide(
-              color: primaryColor,
+            borderSide: const BorderSide(
+              color: AppColors.primaryColor,
             ),
           ),
         ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
@@ -16,12 +17,12 @@ class ContactusPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leading: BackButton(
-            color: whiteColor,
+          leading: const BackButton(
+            color: AppColors.whiteColor,
           ),
-          title: myHeading("Contact Us", whiteColor),
+          title: myHeading("Contact Us", AppColors.whiteColor),
           centerTitle: true,
-          backgroundColor: primaryColor,
+          backgroundColor: AppColors.primaryColor,
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -52,7 +53,7 @@ class ContactusPage extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {},
                       style: nextButtonStyle(context),
-                      child: myHeading("Send a message", whiteColor),
+                      child: myHeading("Send a message", AppColors.whiteColor),
                     ),
                   ],
                 ),

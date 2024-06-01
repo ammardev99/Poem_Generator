@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/modules/auth/login/view.dart';
 import 'package:poem_generator/modules/auth/signup/view.dart';
 import 'package:poem_generator/modules/poem_app.dart';
+import 'package:poem_generator/utils/color.dart';
 
 
 class SelectAccount extends StatelessWidget {
@@ -49,11 +49,11 @@ class SelectAccount extends StatelessWidget {
         height: 50,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(100),
-            border: Border.all(width: 1, color: borderColor)),
+            border: Border.all(width: 1, color: AppColors.borderColor)),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Icon(icon,color: borderColor,), sizeBox(10), myHeading(label, borderColor)],
+          children: [Icon(icon,color: AppColors.borderColor,), sizeBox(10), myHeading(label, AppColors.borderColor)],
         ),
       ),
     );

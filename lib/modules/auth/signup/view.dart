@@ -5,6 +5,7 @@ import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/modules/auth/login/view.dart';
 import 'package:poem_generator/modules/poem_app.dart';
+import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
@@ -38,7 +39,7 @@ class SignupPage extends StatelessWidget {
                 const SizedBox(height: 10),
                 Image.asset("assets/png/logo.png"),
                 const SizedBox(height: 10), // Use SizedBox for consistent spacing
-                myTitle("Create your Account", secondaryColor),
+                myTitle("Create your Account", AppColors.secondaryColor),
                 const SizedBox(height: 20),
                 // enter full name
                 TextField(
@@ -55,13 +56,13 @@ class SignupPage extends StatelessWidget {
                   decoration: InputDecoration(
                     contentPadding:
                         const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                    prefixIcon: Icon(
+                    prefixIcon: const Icon(
                       Icons.lock,
                       size: 20,
-                      color: primaryColor,
+                      color: AppColors.primaryColor,
                     ),
                     hintText: "Password",
-                    hintStyle: TextStyle(color: borderColor),
+                    hintStyle: const TextStyle(color: AppColors.borderColor),
                     suffixIcon: IconButton(
                       hoverColor: Colors.transparent,
                       onPressed: () {
@@ -73,19 +74,19 @@ class SignupPage extends StatelessWidget {
                         showPassword == true
                             ? Icons.visibility
                             : Icons.visibility_off,
-                        color: borderColor,
+                        color: AppColors.borderColor,
                       ),
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(100),
-                      borderSide: BorderSide(
-                        color: borderColor,
+                      borderSide: const BorderSide(
+                        color: AppColors.borderColor,
                       ),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(100),
-                      borderSide: BorderSide(
-                        color: primaryColor,
+                      borderSide: const BorderSide(
+                        color: AppColors.primaryColor,
                       ),
                     ),
                   ),
@@ -128,10 +129,10 @@ class SignupPage extends StatelessWidget {
               //   rememberMe = value!;
               // });
             },
-            activeColor: primaryColor,
+            activeColor: AppColors.primaryColor,
             splashRadius: 0,
-            side: BorderSide(
-              color: primaryColor,
+            side: const BorderSide(
+              color: AppColors.primaryColor,
               width: 2,
             ),
           ),

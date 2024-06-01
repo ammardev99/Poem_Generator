@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:poem_generator/components/assets.dart';
+import 'package:poem_generator/utils/color.dart';
 
 class Category {
   String type;
@@ -23,37 +23,37 @@ List<Category> categoriesList = [
   ),
   Category(
     type: "Narrative",
-    color: secondaryColor,
+    color: AppColors.secondaryColor,
     title: "We create narrative poems based on your prompts.",
     count: 500,
   ),
   Category(
     type: "Acrostic",
-    color: primaryColor,
+    color: AppColors.primaryColor,
     title: "We craft acrostic poems based on your prompts.",
     count: 50,
   ),
   Category(
     type: "Limerick",
-    color: borderColor,
+    color: AppColors.borderColor,
     title: "We compose limerick poems based on your prompts.",
     count: 2500,
   ),
   Category(
     type: "Alliteration",
-    color: borderColor,
+    color: AppColors.borderColor,
     title: "We write alliteration poems based on your prompts.",
     count: 1100,
   ),
   Category(
     type: "love",
-    color: primaryColor,
+    color: AppColors.primaryColor,
     title: "We generate love poems based on your prompts.",
     count: 25,
   ),
   Category(
     type: "Happy",
-    color: secondaryColor,
+    color: AppColors.secondaryColor,
     title: "We create happy poems based on your prompts.",
     count: 36000,
   ),

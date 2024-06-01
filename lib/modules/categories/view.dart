@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/models/category_model.dart';
+import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
@@ -18,8 +18,8 @@ class CategoriesPage extends StatelessWidget {
       child: SafeArea(
         child: Scaffold(
             appBar: AppBar(
-              title: myHeading("All Poems", whiteColor),
-              backgroundColor: primaryColor,
+              title: myHeading("All Poems", AppColors.whiteColor),
+              backgroundColor: AppColors.primaryColor,
             ),
             body: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),

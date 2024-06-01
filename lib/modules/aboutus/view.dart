@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
@@ -16,12 +17,12 @@ class AboutusPage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leading: BackButton(
-            color: whiteColor,
+          leading: const BackButton(
+            color: AppColors.whiteColor,
           ),
-          title: myHeading("About Us", whiteColor),
+          title: myHeading("About Us", AppColors.whiteColor),
           centerTitle: true,
-          backgroundColor: primaryColor,
+          backgroundColor: AppColors.primaryColor,
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -33,13 +34,13 @@ class AboutusPage extends StatelessWidget {
                 sizeBox(20),
                 myTitle(
                   "Welcome to Poem  Generator",
-                  secondaryColor,
+                  AppColors.secondaryColor,
                 ),
                 myHeading(
                     "where poetry meets innovation. We are passionate creators dedicated to revolutionizing the world of poetry through the power of artificial intelligence."),
                 sizeBox(5),
                 Divider(
-                  color: primaryColor03,
+                  color: AppColors.primaryColor03,
                 ),
                 sizeBox(5),
                 aboutCard("Our Mission",
@@ -55,7 +56,7 @@ class AboutusPage extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {},
                       style: nextButtonStyle(context),
-                      child: myHeading("More Apps", whiteColor),
+                      child: myHeading("More Apps", AppColors.whiteColor),
                     ),
                   ],
                 ),
@@ -76,12 +77,12 @@ Widget aboutCard(String title, String text) {
       sizeBox(10),
       myTitle(
         title,
-        secondaryColor,
+        AppColors.secondaryColor,
       ),
       info(text),
       sizeBox(5),
       Divider(
-        color: primaryColor03,
+        color: AppColors.primaryColor03,
       ),
     ],
   );

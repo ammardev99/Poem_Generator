@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
-
-// App Colors
-Color primaryColor = const Color(0xFFF57760);
-Color primaryColor03 = primaryColor.withOpacity(0.3);
-Color secondaryColor = const Color(0xFF374151);
-Color whiteColor = const Color(0xFFFFFFFF);
-Color borderColor = const Color(0xFFAEAEAE);
-Color blackColor = const Color(0xFF363636);
+import 'package:poem_generator/utils/color.dart';
 
 // ElevatedButton.style
 ButtonStyle buttonstyle() {
   return ElevatedButton.styleFrom(
-      foregroundColor: whiteColor,
-      backgroundColor: primaryColor,
+      foregroundColor: AppColors.whiteColor,
+      backgroundColor: AppColors.primaryColor,
       fixedSize: const Size(double.infinity, 50));
 }
 
@@ -26,22 +19,22 @@ InputDecoration inputStyle(
     prefixIcon: Icon(
       icon,
       size: 20,
-      color: primaryColor,
+      color: AppColors.primaryColor,
     ),
     hintText: hint,
-    hintStyle: TextStyle(color: borderColor),
+    hintStyle: const TextStyle(color: AppColors.borderColor),
     // suffixIcon:
     //     IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(100),
-      borderSide: BorderSide(
-        color: borderColor,
+      borderSide: const BorderSide(
+        color: AppColors.borderColor,
       ),
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(100),
-      borderSide: BorderSide(
-        color: primaryColor,
+      borderSide: const BorderSide(
+        color: AppColors.primaryColor,
       ),
     ),
   );
@@ -52,19 +45,19 @@ InputDecoration editProfileinputStyle(String hint) {
   return InputDecoration(
     contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
     hintText: hint,
-    hintStyle: TextStyle(color: borderColor),
+    hintStyle: const TextStyle(color: AppColors.borderColor),
     border: OutlineInputBorder(
       // borderRadius: BorderRadius.circular(100),
       borderRadius: BorderRadius.circular(10),
-      borderSide: BorderSide(
-        color: borderColor,
+      borderSide: const BorderSide(
+        color: AppColors.borderColor,
       ),
     ),
     focusedBorder: OutlineInputBorder(
       // borderRadius: BorderRadius.circular(100),
       borderRadius: BorderRadius.circular(10),
-      borderSide: BorderSide(
-        color: primaryColor,
+      borderSide: const BorderSide(
+        color: AppColors.primaryColor,
       ),
     ),
   );
@@ -93,13 +86,13 @@ InputDecoration searchStyle(
     ),
     border: InputBorder.none,
     fillColor: fillColor,
-    focusColor: borderColor,
+    focusColor: AppColors.borderColor,
   );
 }
 
 ButtonStyle nextButtonStyle(BuildContext context) {
   return ButtonStyle(
-    backgroundColor: MaterialStatePropertyAll(primaryColor),
+    backgroundColor: const MaterialStatePropertyAll(AppColors.primaryColor),
     padding: MaterialStatePropertyAll(EdgeInsets.symmetric(
         horizontal: MediaQuery.of(context).size.width / 3.5, vertical: 15)),
   );

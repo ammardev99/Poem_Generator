@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
@@ -49,12 +50,12 @@ class HomePage extends StatelessWidget {
 
   Container searchBar() {
     return Container(
-      decoration: searchDecoration(whiteColor, primaryColor03),
+      decoration: searchDecoration(AppColors.whiteColor, AppColors.primaryColor03),
       child: TextField(
         decoration: searchStyle(
-            "Search ...", primaryColor, primaryColor03, Icons.search),
-        cursorColor: primaryColor,
-        style: TextStyle(color: secondaryColor),
+            "Search ...", AppColors.primaryColor, AppColors.primaryColor03, Icons.search),
+        cursorColor: AppColors.primaryColor,
+        style: const TextStyle(color: AppColors.secondaryColor),
         autocorrect: true,
         enableSuggestions: true,
       ),

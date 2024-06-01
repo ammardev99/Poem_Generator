@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
@@ -18,12 +19,12 @@ class EditprofilePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            leading: BackButton(
-              color: whiteColor,
+            leading: const BackButton(
+              color: AppColors.whiteColor,
             ),
-            backgroundColor: primaryColor,
+            backgroundColor: AppColors.primaryColor,
             centerTitle: true,
-            title: myHeading("Edit Profile", whiteColor),
+            title: myHeading("Edit Profile", AppColors.whiteColor),
           ),
           body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
@@ -63,14 +64,14 @@ class EditprofilePage extends StatelessWidget {
                             onPressed: () {},
                             style: ButtonStyle(
                               backgroundColor:
-                                  MaterialStatePropertyAll(primaryColor),
+                                  const MaterialStatePropertyAll(AppColors.primaryColor),
                               padding: MaterialStatePropertyAll(
                                   EdgeInsets.symmetric(
                                       horizontal:
                                           MediaQuery.of(context).size.width / 3,
                                       vertical: 15)),
                             ),
-                            child: myHeading("Update", whiteColor),
+                            child: myHeading("Update", AppColors.whiteColor),
                           ),
                         ],
                       ),
@@ -94,7 +95,7 @@ class EditprofilePage extends StatelessWidget {
             Container(
               height: 150,
               width: MediaQuery.of(context).size.width,
-              color: primaryColor,
+              color: AppColors.primaryColor,
             ),
             Container(
               height: 50,
@@ -111,7 +112,7 @@ class EditprofilePage extends StatelessWidget {
             children: [
               Container(
                 decoration: BoxDecoration(
-                    border: Border.all(width: 3, color: primaryColor03),
+                    border: Border.all(width: 3, color: AppColors.primaryColor03),
                     borderRadius: BorderRadius.circular(100)),
                 child: const CircleAvatar(
                   backgroundImage: AssetImage('assets/png/author.png'),
@@ -124,7 +125,7 @@ class EditprofilePage extends StatelessWidget {
                   child: IconButton(
                       onPressed: () {},
                       icon:
-                          Icon(Icons.camera_alt_rounded, color: primaryColor)))
+                          const Icon(Icons.camera_alt_rounded, color: AppColors.primaryColor)))
             ],
           ),
         )
@@ -136,9 +137,9 @@ class EditprofilePage extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        myHeading("Gender:", secondaryColor),
+        myHeading("Gender:", AppColors.secondaryColor),
         Radio(
-          activeColor: primaryColor,
+          activeColor: AppColors.primaryColor,
           splashRadius: 0,
           value: "Male",
           groupValue: gender,
@@ -150,7 +151,7 @@ class EditprofilePage extends StatelessWidget {
         ),
         const Text('Male'),
         Radio(
-          activeColor: primaryColor,
+          activeColor: AppColors.primaryColor,
           splashRadius: 0,
           value: "Female",
           groupValue: gender,
@@ -162,7 +163,7 @@ class EditprofilePage extends StatelessWidget {
         ),
         const Text('Female'),
         Radio(
-          activeColor: primaryColor,
+          activeColor: AppColors.primaryColor,
           splashRadius: 0,
           value: "Other",
           groupValue: gender,

@@ -5,6 +5,7 @@ import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/models/category_model.dart';
 import 'package:poem_generator/modules/editprofile/view.dart';
 import 'package:poem_generator/modules/poeminfo/view.dart';
+import 'package:poem_generator/utils/color.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share_it/share_it.dart';
 
@@ -14,7 +15,7 @@ Widget myTitle(String text, [Color? color]) {
     style: TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.bold,
-      color: color ?? blackColor,
+      color: color ?? AppColors.blackColor,
     ),
     textAlign: TextAlign.center,
   );
@@ -26,7 +27,7 @@ Widget myHeading(String text, [Color? color]) {
     style: TextStyle(
       fontSize: 16,
       fontWeight: FontWeight.w500,
-      color: color ?? blackColor,
+      color: color ?? AppColors.blackColor,
     ),
   );
 }
@@ -37,7 +38,7 @@ Widget info(String text, [Color? color]) {
     style: TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w500,
-      color: color ?? borderColor,
+      color: color ?? AppColors.borderColor,
     ),
     textAlign: TextAlign.justify,
   );
@@ -82,7 +83,7 @@ Widget infoAction(
             overlayColor: MaterialStateProperty.all(Colors.transparent),
             padding: MaterialStateProperty.all(EdgeInsets.zero),
           ),
-          child: info(label, primaryColor))
+          child: info(label, AppColors.primaryColor))
     ],
   );
 }
@@ -90,13 +91,13 @@ Widget infoAction(
 Widget menuOption(IconData icon, String txt, BuildContext context, [page]) {
   return Container(
     decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(color: primaryColor03))),
+        border: Border(bottom: BorderSide(color: AppColors.primaryColor03))),
     child: ListTile(
-      hoverColor: primaryColor03,
-      splashColor: primaryColor03,
+      hoverColor: AppColors.primaryColor03,
+      splashColor: AppColors.primaryColor03,
       leading: Icon(icon),
-      iconColor: primaryColor,
-      title: myHeading(txt, page == null ? Colors.black12 : secondaryColor),
+      iconColor: AppColors.primaryColor,
+      title: myHeading(txt, page == null ? Colors.black12 : AppColors.secondaryColor),
       // trailing: Icon(
       //   Icons.chevron_right,
       //   color: page == null ? Colors.grey : primaryColor03,
@@ -104,8 +105,8 @@ Widget menuOption(IconData icon, String txt, BuildContext context, [page]) {
       onTap: () {
         page == null
             ? ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: myHeading('Under Maintenance', whiteColor),
-                backgroundColor: secondaryColor,
+                content: myHeading('Under Maintenance', AppColors.whiteColor),
+                backgroundColor: AppColors.secondaryColor,
                 duration: const Duration(milliseconds: 200),
               ))
             : Navigator.push(
@@ -118,12 +119,12 @@ Widget menuOption(IconData icon, String txt, BuildContext context, [page]) {
 Widget redirectOption(IconData icon, String txt, String url) {
   return Container(
     decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(color: primaryColor03))),
+        border: Border(bottom: BorderSide(color: AppColors.primaryColor03))),
     child: ListTile(
-      hoverColor: primaryColor03,
-      splashColor: primaryColor03,
+      hoverColor: AppColors.primaryColor03,
+      splashColor: AppColors.primaryColor03,
       leading: Icon(icon),
-      iconColor: primaryColor,
+      iconColor: AppColors.primaryColor,
       title: myHeading(
         txt,
       ),
@@ -146,12 +147,12 @@ Widget redirectOption(IconData icon, String txt, String url) {
 Widget shareOption(IconData icon, String txt, String message) {
   return Container(
     decoration: BoxDecoration(
-        border: Border(bottom: BorderSide(color: primaryColor03))),
+        border: Border(bottom: BorderSide(color: AppColors.primaryColor03))),
     child: ListTile(
-      hoverColor: primaryColor03,
-      splashColor: primaryColor03,
+      hoverColor: AppColors.primaryColor03,
+      splashColor: AppColors.primaryColor03,
       leading: Icon(icon),
-      iconColor: primaryColor,
+      iconColor: AppColors.primaryColor,
       title: myHeading(
         txt,
       ),
@@ -175,12 +176,12 @@ Widget userProfile(
     padding: const EdgeInsets.only(top: 20),
     width: double.infinity,
     height: 190,
-    decoration: BoxDecoration(color: primaryColor),
+    decoration: const BoxDecoration(color: AppColors.primaryColor),
     child: Center(
       child: ListTile(
           leading: Container(
             decoration: BoxDecoration(
-              border: Border.all(color: whiteColor, width: 1),
+              border: Border.all(color: AppColors.whiteColor, width: 1),
               borderRadius: BorderRadius.circular(100),
             ),
             child: CircleAvatar(
@@ -189,15 +190,15 @@ Widget userProfile(
               ),
             ),
           ),
-          title: myHeading(name, whiteColor),
-          subtitle: info(email, whiteColor),
+          title: myHeading(name, AppColors.whiteColor),
+          subtitle: info(email, AppColors.whiteColor),
           trailing: IconButton(
             onPressed: () {
               Get.to( EditprofilePage());
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.edit,
-              color: whiteColor,
+              color: AppColors.whiteColor,
             ),
           )),
     ),
@@ -215,8 +216,8 @@ Widget guestOption(String text, page) {
       height: 50,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
-          border: Border.all(width: 1, color: primaryColor)),
-      child: Center(child: myHeading(text, primaryColor)),
+          border: Border.all(width: 1, color: AppColors.primaryColor)),
+      child: Center(child: myHeading(text, AppColors.primaryColor)),
     ),
   );
 }
@@ -225,7 +226,7 @@ Widget poemCategory(Category category) {
   return Container(
     margin: const EdgeInsets.symmetric(vertical: 5),
     decoration: BoxDecoration(
-      border: Border.all(color: primaryColor03),
+      border: Border.all(color: AppColors.primaryColor03),
       borderRadius: BorderRadius.circular(8),
     ),
     child: InkWell(
@@ -233,8 +234,8 @@ Widget poemCategory(Category category) {
         Get.to(CategoryFeed(name: category.type));
       },
       borderRadius: BorderRadius.circular(8),
-      hoverColor: whiteColor,
-      splashColor: primaryColor03,
+      hoverColor: AppColors.whiteColor,
+      splashColor: AppColors.primaryColor03,
       child: Row(
         children: [
           Container(
@@ -247,7 +248,7 @@ Widget poemCategory(Category category) {
                 bottomLeft: Radius.circular(8),
               ),
             ),
-            child: Center(child: myHeading(category.type, whiteColor)),
+            child: Center(child: myHeading(category.type, AppColors.whiteColor)),
           ),
           const SizedBox(width: 10),
           Expanded(
@@ -270,7 +271,7 @@ Widget poemOfTheDay(Category category) {
   return Container(
     margin: const EdgeInsets.symmetric(vertical: 5),
     decoration: BoxDecoration(
-      border: Border.all(color: primaryColor03),
+      border: Border.all(color: AppColors.primaryColor03),
       borderRadius: BorderRadius.circular(8),
     ),
     child: InkWell(
@@ -278,8 +279,8 @@ Widget poemOfTheDay(Category category) {
         Get.to( PoeminfoPage());
       },
       borderRadius: BorderRadius.circular(8),
-      hoverColor: whiteColor,
-      splashColor: primaryColor03,
+      hoverColor: AppColors.whiteColor,
+      splashColor: AppColors.primaryColor03,
       child: Stack(
         children: [
 // main card
@@ -306,16 +307,16 @@ Widget poemOfTheDay(Category category) {
                   child: ListTile(
                 contentPadding: EdgeInsets.zero,
                 title: SizedBox(
-                    height: 30, child: myHeading(category.title, primaryColor)),
+                    height: 30, child: myHeading(category.title, AppColors.primaryColor)),
                 subtitle: RichText(
-                  text: TextSpan(
+                  text: const TextSpan(
                     children: [
                       TextSpan(
                         text: ' Author: ',
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
-                          color: borderColor,
+                          color: AppColors.borderColor,
                         ),
                       ),
                       TextSpan(
@@ -323,7 +324,7 @@ Widget poemOfTheDay(Category category) {
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.w500,
-                          color: secondaryColor,
+                          color: AppColors.secondaryColor,
                         ),
                       ),
                     ],
@@ -338,9 +339,9 @@ Widget poemOfTheDay(Category category) {
               top: 0,
               child: IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.favorite_border,
-                    color: borderColor,
+                    color: AppColors.borderColor,
                   ))),
 
           Positioned(
@@ -348,9 +349,9 @@ Widget poemOfTheDay(Category category) {
               bottom: 5,
               child: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.thumb_up_alt_outlined,
-                    color: borderColor,
+                    color: AppColors.borderColor,
                     size: 15,
                   ),
                   sizeBox(5),
@@ -369,12 +370,12 @@ Widget iconWithLabel(IconData icon, String label) {
     mainAxisSize: MainAxisSize.min,
     children: [
       IconButton(
-        splashColor: primaryColor,
+        splashColor: AppColors.primaryColor,
         hoverColor: Colors.transparent,
         onPressed: () {},
         icon: Icon(
           icon,
-          color: primaryColor,
+          color: AppColors.primaryColor,
         ),
       ),
       const SizedBox(width: 4),
@@ -385,7 +386,7 @@ Widget iconWithLabel(IconData icon, String label) {
 
 Widget poemPost(BuildContext context) {
   return InkWell(
-    splashColor: primaryColor03,
+    splashColor: AppColors.primaryColor03,
     hoverColor: Colors.transparent,
     onTap: () {
       Get.to( PoeminfoPage());
@@ -394,8 +395,8 @@ Widget poemPost(BuildContext context) {
       padding: const EdgeInsets.all(8),
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
-          color: whiteColor,
-          border: Border.all(width: 2, color: primaryColor03),
+          color: AppColors.whiteColor,
+          border: Border.all(width: 2, color: AppColors.primaryColor03),
           borderRadius: BorderRadius.circular(8)),
       child: Column(
         children: [
@@ -404,13 +405,13 @@ Widget poemPost(BuildContext context) {
             contentPadding: const EdgeInsets.all(3),
             leading: Container(
               decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: primaryColor03),
+                  border: Border.all(width: 2, color: AppColors.primaryColor03),
                   borderRadius: BorderRadius.circular(100)),
               child: const CircleAvatar(
                 backgroundImage: AssetImage('assets/png/author.png'),
               ),
             ),
-            title: myHeading("Name", secondaryColor),
+            title: myHeading("Name", AppColors.secondaryColor),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -428,7 +429,7 @@ Widget poemPost(BuildContext context) {
           ),
           sizeBox(10),
           Divider(
-            color: primaryColor03,
+            color: AppColors.primaryColor03,
             indent: 1,
             endIndent: 1,
           ),
@@ -473,8 +474,8 @@ Widget categoryButton(String text) {
       Get.to(CategoryFeed(name: text));
     },
     style: TextButton.styleFrom(
-      foregroundColor: whiteColor,
-      backgroundColor: borderColor,
+      foregroundColor: AppColors.whiteColor,
+      backgroundColor: AppColors.borderColor,
       padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(100),
@@ -487,10 +488,10 @@ Widget categoryButton(String text) {
 Widget profileWelcom() {
   return ListTile(
     title: myHeading("Hi, Filip"),
-    subtitle: info("Looking for specific poem?", secondaryColor),
+    subtitle: info("Looking for specific poem?", AppColors.secondaryColor),
     trailing: Container(
       decoration: BoxDecoration(
-        border: Border.all(color: primaryColor, width: 1),
+        border: Border.all(color: AppColors.primaryColor, width: 1),
         borderRadius: BorderRadius.circular(100),
       ),
       child: const CircleAvatar(

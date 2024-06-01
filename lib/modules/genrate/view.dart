@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
@@ -25,12 +26,12 @@ class GenratePage extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               width: MediaQuery.of(context).size.width,
-              color: primaryColor,
+              color: AppColors.primaryColor,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   sizeBox(60),
-                  myHeading("Poem Genrator", whiteColor),
+                  myHeading("Poem Genrator", AppColors.whiteColor),
                   const SizedBox(
                     height: 10,
                   ),
@@ -38,7 +39,7 @@ class GenratePage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  myHeading("Length:", whiteColor),
+                  myHeading("Length:", AppColors.whiteColor),
                   selectLength(),
                   const SizedBox(
                     height: 20,
@@ -49,14 +50,14 @@ class GenratePage extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () {},
                         style: ButtonStyle(
-                          backgroundColor: MaterialStatePropertyAll(whiteColor),
+                          backgroundColor: const MaterialStatePropertyAll(AppColors.whiteColor),
                           padding: MaterialStatePropertyAll(
                               EdgeInsets.symmetric(
                                   horizontal:
                                       MediaQuery.of(context).size.width / 3,
                                   vertical: 20)),
                         ),
-                        child: myHeading("Generate", secondaryColor),
+                        child: myHeading("Generate", AppColors.secondaryColor),
                       ),
                     ],
                   ),
@@ -80,7 +81,7 @@ class GenratePage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Radio(
-          activeColor: whiteColor,
+          activeColor: AppColors.whiteColor,
           splashRadius: 0,
           value: "Regular",
           groupValue: getlength,
@@ -92,7 +93,7 @@ class GenratePage extends StatelessWidget {
         ),
         const Text('Regular'),
         Radio(
-          activeColor: whiteColor,
+          activeColor: AppColors.whiteColor,
           splashRadius: 0,
           value: "Medium",
           groupValue: getlength,
@@ -104,7 +105,7 @@ class GenratePage extends StatelessWidget {
         ),
         const Text('Medium'),
         Radio(
-          activeColor: whiteColor,
+          activeColor: AppColors.whiteColor,
           splashRadius: 0,
           value: "Long",
           groupValue: getlength,
@@ -122,12 +123,12 @@ class GenratePage extends StatelessWidget {
 
   Container getPromote(String promote) {
     return Container(
-      decoration: searchDecoration(primaryColor, whiteColor),
+      decoration: searchDecoration(AppColors.primaryColor, AppColors.whiteColor),
       child: TextField(
-        decoration: searchStyle(promote, whiteColor, primaryColor,
+        decoration: searchStyle(promote, AppColors.whiteColor, AppColors.primaryColor,
             Icons.generating_tokens_outlined),
-        cursorColor: whiteColor,
-        style: TextStyle(color: whiteColor),
+        cursorColor: AppColors.whiteColor,
+        style: const TextStyle(color: AppColors.whiteColor),
         autocorrect: true,
         enableSuggestions: true,
       ),

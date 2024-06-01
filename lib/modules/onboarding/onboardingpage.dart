@@ -5,6 +5,7 @@ import 'package:poem_generator/modules/auth/selectaccount.dart';
 import 'package:poem_generator/models/onboarding_model.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/utils/color.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});
@@ -46,7 +47,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                           Get.offAll(const SelectAccount());
                         });
                       },
-                      child: info("Skip", borderColor))),
+                      child: info("Skip", AppColors.borderColor))),
               sizeBox(40),
               Expanded(
                 child: PageView.builder(
@@ -63,7 +64,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                       children: [
                         SvgPicture.asset(onBoardingScreen[index].image),
                         sizeBox(40),
-                        Container(child: myTitle(onBoardingScreen[index].title, secondaryColor)),
+                        Container(child: myTitle(onBoardingScreen[index].title, AppColors.secondaryColor)),
                       ],
                     );
                   },
@@ -123,7 +124,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         width: currentIndex == i ? 25 : 10,
         margin: const EdgeInsets.symmetric(horizontal: 3),
         decoration: BoxDecoration(
-            color: currentIndex == i ? primaryColor : primaryColor03,
+            color: currentIndex == i ? AppColors.primaryColor : AppColors.primaryColor03,
             borderRadius: BorderRadius.circular(25)),
       ),
     );
