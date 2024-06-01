@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/models/poem_model.dart';
 import 'package:poem_generator/utils/color.dart';
 
 class CategoryFeed extends StatelessWidget {
@@ -25,11 +26,11 @@ class CategoryFeed extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               children: [
                 sizeBox(20),
-                poemPost(context),
+          poemPost(context, poemPostList[0]),
                 sizeBox(10),
-                poemPost(context),
+          poemPost(context, poemPostList[1]),
                 sizeBox(10),
-                poemPost(context),
+          poemPost(context, poemPostList[2]),
                 sizeBox(20),
               ],
             ),

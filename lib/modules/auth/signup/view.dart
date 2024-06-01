@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/modules/auth/selectaccount.dart';
-import 'package:poem_generator/components/assets.dart';
+import 'package:poem_generator/components/style.dart';
 import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/modules/auth/login/view.dart';
 import 'package:poem_generator/modules/poem_app.dart';
@@ -36,9 +37,11 @@ class SignupPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const SizedBox(height: 10),
-                Image.asset("assets/png/logo.png"),
-                const SizedBox(height: 10), // Use SizedBox for consistent spacing
+              sizeBox(10),
+              SizedBox(
+                height: 80,
+                child: SvgPicture.asset('assets/svg/logoPoemGenerator.svg')),
+              sizeBox(40),
                 myTitle("Create your Account", AppColors.secondaryColor),
                 const SizedBox(height: 20),
                 // enter full name

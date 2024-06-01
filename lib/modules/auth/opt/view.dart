@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/modules/auth/mailverify/view.dart';
@@ -25,9 +26,11 @@ class OptPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const SizedBox(height: 40), 
-                Image.asset("assets/png/logo.png"),
-                const SizedBox(height: 10), 
+              sizeBox(80),
+              SizedBox(
+                height: 80,
+                child: SvgPicture.asset('assets/svg/logoPoemGenerator.svg')),
+              sizeBox(40),
                 myTitle("Enter OTP", AppColors.secondaryColor),
                 info("Enter your OTP code here to varify"),
                 const SizedBox(height: 20),

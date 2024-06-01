@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:poem_generator/models/poem_model.dart';
 import 'package:poem_generator/modules/categoryfeed/category_feed.dart';
-import 'package:poem_generator/components/assets.dart';
+import 'package:poem_generator/components/style.dart';
 import 'package:poem_generator/models/category_model.dart';
-import 'package:poem_generator/modules/editprofile/view.dart';
+import 'package:poem_generator/modules/poeminfo/poem_info_dialog.dart';
 import 'package:poem_generator/modules/poeminfo/view.dart';
 import 'package:poem_generator/utils/color.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -97,7 +98,8 @@ Widget menuOption(IconData icon, String txt, BuildContext context, [page]) {
       splashColor: AppColors.primaryColor03,
       leading: Icon(icon),
       iconColor: AppColors.primaryColor,
-      title: myHeading(txt, page == null ? Colors.black12 : AppColors.secondaryColor),
+      title: myHeading(
+          txt, page == null ? Colors.black12 : AppColors.secondaryColor),
       // trailing: Icon(
       //   Icons.chevron_right,
       //   color: page == null ? Colors.grey : primaryColor03,
@@ -157,8 +159,7 @@ Widget shareOption(IconData icon, String txt, String message) {
         txt,
       ),
       onTap: () {
-        ShareIt.text(
-          content: 'message');
+        ShareIt.text(content: 'message');
         // ignore: avoid_print
         print('share');
       },
@@ -179,28 +180,29 @@ Widget userProfile(
     decoration: const BoxDecoration(color: AppColors.primaryColor),
     child: Center(
       child: ListTile(
-          leading: Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: AppColors.whiteColor, width: 1),
-              borderRadius: BorderRadius.circular(100),
-            ),
-            child: CircleAvatar(
-              backgroundImage: AssetImage(
-                img,
-              ),
+        leading: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: AppColors.whiteColor, width: 1),
+            borderRadius: BorderRadius.circular(100),
+          ),
+          child: CircleAvatar(
+            backgroundImage: AssetImage(
+              img,
             ),
           ),
-          title: myHeading(name, AppColors.whiteColor),
-          subtitle: info(email, AppColors.whiteColor),
-          trailing: IconButton(
-            onPressed: () {
-              Get.to( EditprofilePage());
-            },
-            icon: const Icon(
-              Icons.edit,
-              color: AppColors.whiteColor,
-            ),
-          )),
+        ),
+        title: myHeading(name, AppColors.whiteColor),
+        subtitle: info(email, AppColors.whiteColor),
+        // trailing: IconButton(
+        //   onPressed: () {
+        //     Get.to( EditprofilePage());
+        //   },
+        //   icon: const Icon(
+        //     Icons.edit,
+        //     color: AppColors.whiteColor,
+        //   ),
+        // )
+      ),
     ),
   );
 }
@@ -248,7 +250,8 @@ Widget poemCategory(Category category) {
                 bottomLeft: Radius.circular(8),
               ),
             ),
-            child: Center(child: myHeading(category.type, AppColors.whiteColor)),
+            child:
+                Center(child: myHeading(category.type, AppColors.whiteColor)),
           ),
           const SizedBox(width: 10),
           Expanded(
@@ -276,7 +279,7 @@ Widget poemOfTheDay(Category category) {
     ),
     child: InkWell(
       onTap: () {
-        Get.to( PoeminfoPage());
+        Get.to(PoeminfoPage());
       },
       borderRadius: BorderRadius.circular(8),
       hoverColor: AppColors.whiteColor,
@@ -307,7 +310,8 @@ Widget poemOfTheDay(Category category) {
                   child: ListTile(
                 contentPadding: EdgeInsets.zero,
                 title: SizedBox(
-                    height: 30, child: myHeading(category.title, AppColors.primaryColor)),
+                    height: 30,
+                    child: myHeading(category.title, AppColors.primaryColor)),
                 subtitle: RichText(
                   text: const TextSpan(
                     children: [
@@ -384,12 +388,13 @@ Widget iconWithLabel(IconData icon, String label) {
   );
 }
 
-Widget poemPost(BuildContext context) {
+Widget poemPost(BuildContext context, PoemPost post) {
   return InkWell(
     splashColor: AppColors.primaryColor03,
     hoverColor: Colors.transparent,
     onTap: () {
-      Get.to( PoeminfoPage());
+      poemInfoDialog(context, post);
+      // Get.to( PoeminfoPage());
     },
     child: Container(
       padding: const EdgeInsets.all(8),
@@ -407,24 +412,24 @@ Widget poemPost(BuildContext context) {
               decoration: BoxDecoration(
                   border: Border.all(width: 2, color: AppColors.primaryColor03),
                   borderRadius: BorderRadius.circular(100)),
-              child: const CircleAvatar(
-                backgroundImage: AssetImage('assets/png/author.png'),
+              child: CircleAvatar(
+                backgroundImage: AssetImage(post.authorImg),
               ),
             ),
-            title: myHeading("Name", AppColors.secondaryColor),
+            title: myHeading(post.authorName, AppColors.secondaryColor),
             trailing: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 const Icon(Icons.access_time_outlined, size: 15),
                 sizeBox(4),
-                info("2h")
+                info(post.time),
               ],
             ),
           ),
           sizeBox(10),
           // poem text
-          const Text(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus tortor eget mi ultricies, vel placerat justo efficitur.Integer eget ante a ligula efficitur condimentum. Vivamus volutpat libero et nisi luctus, quis sollicitudin lacus vulputate. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus tortor eget mi ultricies, vel placerat justo efficitur.Integer eget ante a ligula efficitur condimentum. Vivamus volutpat libero et nisi luctus, quis sollicitudin lacus vulputate.",
+          Text(
+            "${post.poem}Read more...",
             textAlign: TextAlign.justify,
           ),
           sizeBox(10),
@@ -455,27 +460,25 @@ Widget categoriesButtons() {
     child: Row(
       children: [
         sizeBox(15),
-        categoryButton("New Poems"),
-        sizeBox(5),
-        categoryButton("Poems"),
-        sizeBox(5),
-        categoryButton("Happy Poems"),
-        sizeBox(5),
-        categoryButton("Love Poems"),
-        sizeBox(5),
+        for (var i = 0; i < categoriesList.length; i++)
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 2),
+            child:
+                categoryButton(categoriesList[i].type, categoriesList[i].color),
+          ),
       ],
     ),
   );
 }
 
-Widget categoryButton(String text) {
+Widget categoryButton(String text, Color color) {
   return TextButton(
     onPressed: () {
       Get.to(CategoryFeed(name: text));
     },
     style: TextButton.styleFrom(
       foregroundColor: AppColors.whiteColor,
-      backgroundColor: AppColors.borderColor,
+      backgroundColor: color.withOpacity(0.9),
       padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(100),
@@ -487,7 +490,7 @@ Widget categoryButton(String text) {
 
 Widget profileWelcom() {
   return ListTile(
-    title: myHeading("Hi, Filip"),
+    title: myHeading("Hi, Noman"),
     subtitle: info("Looking for specific poem?", AppColors.secondaryColor),
     trailing: Container(
       decoration: BoxDecoration(

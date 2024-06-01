@@ -14,30 +14,26 @@ class CategoriesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: SafeArea(
-        child: Scaffold(
-            appBar: AppBar(
-              title: myHeading("All Poems", AppColors.whiteColor),
-              backgroundColor: AppColors.primaryColor,
-            ),
-            body: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Column(
-                  children: [
-                    Expanded(
-                      child: ListView.builder(
-                        physics: const BouncingScrollPhysics(),
-                        itemCount: categoriesList.length,
-                        itemBuilder: (context, index) {
-                          return poemCategory(categoriesList[index]);
-                        },
-                      ),
-                    ),
-                  ],
-                )),
+    return Scaffold(
+        appBar: AppBar(
+          title: myHeading("All Poems", AppColors.whiteColor),
+          backgroundColor: AppColors.primaryColor,
+        ),
+        body: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Column(
+              children: [
+                Expanded(
+                  child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    itemCount: categoriesList.length,
+                    itemBuilder: (context, index) {
+                      return poemCategory(categoriesList[index]);
+                    },
+                  ),
                 ),
-      ),
-    );
+              ],
+            )),
+            );
   }
 }

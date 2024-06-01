@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/components/assets.dart';
+import 'package:poem_generator/components/style.dart';
 import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/utils/color.dart';
 

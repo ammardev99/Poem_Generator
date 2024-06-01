@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/modules/auth/login/view.dart';
 import 'package:poem_generator/modules/auth/signup/view.dart';
@@ -19,8 +20,10 @@ class SelectAccount extends StatelessWidget {
           child: ListView(
             children: [
               sizeBox(10),
-              Image.asset("assets/png/logo.png"),
-              sizeBox(10),
+              SizedBox(
+                height: 80,
+                child: SvgPicture.asset('assets/svg/logoPoemGenerator.svg')),
+              sizeBox(40),
               myTitle("Let's you in"),
               sizeBox(20),
               guestOption("Start as a Guest", const PoemApp()),

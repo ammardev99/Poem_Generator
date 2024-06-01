@@ -35,7 +35,7 @@ List<Category> categoriesList = [
   ),
   Category(
     type: "Limerick",
-    color: AppColors.borderColor,
+    color: AppColors.secondaryColor,
     title: "We compose limerick poems based on your prompts.",
     count: 2500,
   ),

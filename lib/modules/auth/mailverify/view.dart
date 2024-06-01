@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/components/assets.dart';
+import 'package:poem_generator/components/style.dart';
 import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/modules/auth/opt/view.dart';
 import 'package:poem_generator/modules/auth/signup/view.dart';
@@ -26,9 +27,11 @@ class MailverifyPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const SizedBox(height: 40),
-                Image.asset("assets/png/logo.png"),
-                const SizedBox(height: 10),
+              sizeBox(80),
+              SizedBox(
+                height: 80,
+                child: SvgPicture.asset('assets/svg/logoPoemGenerator.svg')),
+              sizeBox(40),
                 myTitle("Forgot Password", AppColors.secondaryColor),
                 info("Enter email to varify your account"),
                 const SizedBox(height: 20),

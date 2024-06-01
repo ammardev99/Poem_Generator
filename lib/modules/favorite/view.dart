@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
@@ -14,7 +16,8 @@ class FavoritePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Favorite"), 
+          title: myHeading("Favorite Poems", AppColors.whiteColor),
+          backgroundColor: AppColors.primaryColor,
         ),
       ),
     );

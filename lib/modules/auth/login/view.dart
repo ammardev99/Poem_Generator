@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/components/assets.dart';
+import 'package:poem_generator/components/style.dart';
 import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/modules/auth/mailverify/view.dart';
 import 'package:poem_generator/modules/auth/signup/view.dart';
-import 'package:poem_generator/modules/home/view.dart';
+import 'package:poem_generator/modules/poem_app.dart';
 import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
@@ -30,9 +31,11 @@ class LoginPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const SizedBox(height: 10),
-                Image.asset("assets/png/logo.png"),
-                const SizedBox(height: 10),
+              sizeBox(10),
+              SizedBox(
+                height: 80,
+                child: SvgPicture.asset('assets/svg/logoPoemGenerator.svg')),
+              sizeBox(40),
 
                 const SizedBox(height: 10),
                 myTitle("Login", AppColors.secondaryColor),
@@ -88,7 +91,7 @@ class LoginPage extends StatelessWidget {
                 // remember password
                 rememberPassword(),
                 const SizedBox(height: 40),
-                moveButtom("Sign in", context, HomePage(), 'r'),
+                moveButtom("Sign in", context, const PoemApp(), 'r'),
                 sizeBox(10),
                 GestureDetector(
                     onTap: () {
