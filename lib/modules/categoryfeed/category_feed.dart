@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/utils/color.dart';
 
 class CategoryFeed extends StatelessWidget {
   final String name;
@@ -12,11 +12,11 @@ class CategoryFeed extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            leading: BackButton(
-              color: whiteColor,
+            leading: const BackButton(
+              color: AppColors.whiteColor,
             ),
-            title: myHeading(name, whiteColor),
-            backgroundColor: primaryColor,
+            title: myHeading(name, AppColors.whiteColor),
+            backgroundColor: AppColors.primaryColor,
             centerTitle: true,
           ),
           body: Padding(

@@ -50,8 +50,8 @@ class GenratePage extends StatelessWidget {
                       ElevatedButton(
                         onPressed: () {},
                         style: ButtonStyle(
-                          backgroundColor: const MaterialStatePropertyAll(AppColors.whiteColor),
-                          padding: MaterialStatePropertyAll(
+                          backgroundColor: const WidgetStatePropertyAll(AppColors.whiteColor),
+                          padding: WidgetStatePropertyAll(
                               EdgeInsets.symmetric(
                                   horizontal:
                                       MediaQuery.of(context).size.width / 3,

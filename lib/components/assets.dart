@@ -92,8 +92,8 @@ InputDecoration searchStyle(
 
 ButtonStyle nextButtonStyle(BuildContext context) {
   return ButtonStyle(
-    backgroundColor: const MaterialStatePropertyAll(AppColors.primaryColor),
-    padding: MaterialStatePropertyAll(EdgeInsets.symmetric(
+    backgroundColor: const WidgetStatePropertyAll(AppColors.primaryColor),
+    padding: WidgetStatePropertyAll(EdgeInsets.symmetric(
         horizontal: MediaQuery.of(context).size.width / 3.5, vertical: 15)),
   );
 }

@@ -64,8 +64,8 @@ class EditprofilePage extends StatelessWidget {
                             onPressed: () {},
                             style: ButtonStyle(
                               backgroundColor:
-                                  const MaterialStatePropertyAll(AppColors.primaryColor),
-                              padding: MaterialStatePropertyAll(
+                                  const WidgetStatePropertyAll(AppColors.primaryColor),
+                              padding: WidgetStatePropertyAll(
                                   EdgeInsets.symmetric(
                                       horizontal:
                                           MediaQuery.of(context).size.width / 3,

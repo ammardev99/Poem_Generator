@@ -80,8 +80,8 @@ Widget infoAction(
             }
           },
           style: ButtonStyle(
-            overlayColor: MaterialStateProperty.all(Colors.transparent),
-            padding: MaterialStateProperty.all(EdgeInsets.zero),
+            overlayColor: WidgetStateProperty.all(Colors.transparent),
+            padding: WidgetStateProperty.all(EdgeInsets.zero),
           ),
           child: info(label, AppColors.primaryColor))
     ],
