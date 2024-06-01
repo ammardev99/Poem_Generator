@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/Screens/ineer%20screens/category_feed.dart';
-import 'package:poem_generator/Screens/ineer%20screens/poem_info.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/models/category_model.dart';
 import 'package:poem_generator/modules/editprofile/view.dart';
+import 'package:poem_generator/modules/poeminfo/view.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share_it/share_it.dart';
 
@@ -275,7 +275,7 @@ Widget poemOfTheDay(Category category) {
     ),
     child: InkWell(
       onTap: () {
-        Get.to(const PoemInfo());
+        Get.to( PoeminfoPage());
       },
       borderRadius: BorderRadius.circular(8),
       hoverColor: whiteColor,
@@ -388,7 +388,7 @@ Widget poemPost(BuildContext context) {
     splashColor: primaryColor03,
     hoverColor: Colors.transparent,
     onTap: () {
-      Get.to(const PoemInfo());
+      Get.to( PoeminfoPage());
     },
     child: Container(
       padding: const EdgeInsets.all(8),

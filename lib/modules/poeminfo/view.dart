@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
 
-class PoemInfo extends StatefulWidget {
-  const PoemInfo({super.key});
+import 'logic.dart';
 
-  @override
-  State<PoemInfo> createState() => _PoemInfoState();
-}
+class PoeminfoPage extends StatelessWidget {
+  PoeminfoPage({Key? key}) : super(key: key);
 
-class _PoemInfoState extends State<PoemInfo> {
+  final logic = Get.put(PoeminfoLogic());
+  final state = Get.find<PoeminfoLogic>().state;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -74,14 +75,14 @@ Widget poemCard(BuildContext context) {
                   backgroundImage: AssetImage('assets/png/author.png'),
                 ),
               ),
-              sizeBox(10),
-              myHeading("Fillip Justic", secondaryColor),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
+                  myHeading("Fillip Justic", secondaryColor),
+                  const Spacer(),
                   const Icon(Icons.access_time_outlined, size: 15),
                   sizeBox(4),
-                  info("2h")
+                  info("2h"),
                 ],
               ),
             ],
