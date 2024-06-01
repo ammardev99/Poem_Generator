@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/modules/auth/selectaccount.dart';
-import 'package:poem_generator/Screens/home.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/modules/auth/login/view.dart';
+import 'package:poem_generator/modules/poem_app.dart';
 
 import 'logic.dart';
 
@@ -96,7 +96,7 @@ class SignupPage extends StatelessWidget {
                 // remember password
                 rememberPassword(),
                 const SizedBox(height: 40),
-                moveButtom("Sign up", context, const Home(), 'r'),
+                moveButtom("Sign up", context, const PoemApp(), 'r'),
                 sizeBox(10),
                 infoAction(
                   "Do you have an account?",

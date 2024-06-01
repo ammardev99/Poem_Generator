@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/Screens/ineer%20screens/category_feed.dart';
+import 'package:poem_generator/modules/categoryfeed/category_feed.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/models/category_model.dart';
 import 'package:poem_generator/modules/editprofile/view.dart';

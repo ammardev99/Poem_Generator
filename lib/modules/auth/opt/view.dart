@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/Screens/home.dart';
 import 'package:poem_generator/components/assets.dart';
 import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/modules/auth/mailverify/view.dart';
+import 'package:poem_generator/modules/poem_app.dart';
 
 import 'logic.dart';
 
@@ -42,7 +42,7 @@ class OptPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 20),
-                moveButtom("Confirm", context, const Home(), 'r'),
+                moveButtom("Confirm", context, const PoemApp(), 'r'),
                 sizeBox(10),
                 infoAction(
                   "Don't get code?",
