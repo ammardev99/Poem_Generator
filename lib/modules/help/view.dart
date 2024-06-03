@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/style.dart';
-import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
+import 'package:poem_generator/widgets/custom_formatting.dart';
 
 import 'logic.dart';
 
@@ -43,7 +43,7 @@ class HelpPage extends StatelessWidget {
           leading: const BackButton(
             color: AppColors.whiteColor,
           ),
-          title: myHeading("Help", AppColors.whiteColor),
+          title: customHeading("Help", AppColors.whiteColor),
           centerTitle: true,
           backgroundColor: AppColors.primaryColor,
         ),
@@ -53,12 +53,12 @@ class HelpPage extends StatelessWidget {
             // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               sizeBox(20),
-              myTitle(
+              customTitle(
                 "We’re here to help you with anything and everything on Poem Generator",
                 AppColors.secondaryColor,
               ),
               sizeBox(5),
-              info(
+              customInfo(
                 "We have got you covered share your  concern or check our frequently asked questions listed below.",
               ),
               sizeBox(20),
@@ -68,20 +68,20 @@ class HelpPage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final faqItem = faqs[index];
                     return ExpansionTile(
-                      title: myHeading(faqItem.question),
+                      title: customHeading(faqItem.question),
                       collapsedIconColor: AppColors.primaryColor,
                       initiallyExpanded: false,
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(16.0),
-                          child: info(faqItem.answer),
+                          child: customInfo(faqItem.answer),
                         ),
                       ],
                     );
                   },
                 ),
               ),
-              info("Still stuck? Help us a mail away"),
+              customInfo("Still stuck? Help us a mail away"),
               sizeBox(10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -89,7 +89,7 @@ class HelpPage extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () => Get.toNamed(RouteName.contactUsPage),
                     style: nextButtonStyle(context),
-                    child: myHeading("Send a message", AppColors.whiteColor),
+                    child: customHeading("Send a message", AppColors.whiteColor),
                   ),
                 ],
               ),

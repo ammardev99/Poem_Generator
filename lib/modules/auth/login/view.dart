@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/style.dart';
-import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
+import 'package:poem_generator/widgets/custom_button_actions.dart';
+import 'package:poem_generator/widgets/custom_formatting.dart';
 
 import 'logic.dart';
 
@@ -36,7 +37,7 @@ class LoginPage extends StatelessWidget {
               sizeBox(40),
 
                 const SizedBox(height: 10),
-                myTitle("Login", AppColors.secondaryColor),
+                customTitle("Login", AppColors.secondaryColor),
                 const SizedBox(height: 20),
                 // enter email
                 TextField(
@@ -89,15 +90,15 @@ class LoginPage extends StatelessWidget {
                 // remember password
                 rememberPassword(),
                 const SizedBox(height: 40),
-                moveButton("Sign in", context, RouteName.poemApp, 'r'),
+                customActionButton("Sign in", context, RouteName.poemApp, 'r'),
                 sizeBox(10),
                 GestureDetector(
                     onTap: () {
                       Get.toNamed(RouteName.emailVerifyPage);
                     },
-                    child: myHeading("Forgot the password?", AppColors.secondaryColor)),
+                    child: customHeading("Forgot the password?", AppColors.secondaryColor)),
                 sizeBox(10),
-                infoAction(
+                customInfoAction(
                   "Don't have an account?",
                   "Sign up",
                   RouteName.signUpPage,
@@ -134,7 +135,7 @@ class LoginPage extends StatelessWidget {
               width: 2,
             ),
           ),
-          myHeading("Remember me"),
+          customHeading("Remember me"),
         ],
       ),
     );

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/models/category_model.dart';
 import 'package:poem_generator/utils/color.dart';
+import 'package:poem_generator/widgets/custom_category_card.dart';
+import 'package:poem_generator/widgets/custom_formatting.dart';
 
 import 'logic.dart';
 
@@ -16,7 +17,7 @@ class CategoriesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: myHeading("All Poems", AppColors.whiteColor),
+          title: customHeading("All Poems", AppColors.whiteColor),
           backgroundColor: AppColors.primaryColor,
         ),
         body: Padding(
@@ -28,7 +29,7 @@ class CategoriesPage extends StatelessWidget {
                     physics: const BouncingScrollPhysics(),
                     itemCount: categoriesList.length,
                     itemBuilder: (context, index) {
-                      return poemCategory(categoriesList[index]);
+                      return customCategoryCard(categoriesList[index]);
                     },
                   ),
                 ),

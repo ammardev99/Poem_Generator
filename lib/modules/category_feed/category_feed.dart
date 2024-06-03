@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/models/poem_model.dart';
 import 'package:poem_generator/utils/color.dart';
+import 'package:poem_generator/widgets/custom_formatting.dart';
+import 'package:poem_generator/widgets/custom_poem_post.dart';
 
 class CategoryFeed extends StatelessWidget {
   final String? name;
@@ -17,7 +18,7 @@ class CategoryFeed extends StatelessWidget {
             leading: const BackButton(
               color: AppColors.whiteColor,
             ),
-            title: myHeading(name??"", AppColors.whiteColor),
+            title: customHeading(name??"", AppColors.whiteColor),
             backgroundColor: AppColors.primaryColor,
             centerTitle: true,
           ),
@@ -27,11 +28,11 @@ class CategoryFeed extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               children: [
                 sizeBox(20),
-          poemPost(context, poemPostList[0]),
+          customPoemPost(context, poemPostList[0]),
                 sizeBox(10),
-          poemPost(context, poemPostList[1]),
+          customPoemPost(context, poemPostList[1]),
                 sizeBox(10),
-          poemPost(context, poemPostList[2]),
+          customPoemPost(context, poemPostList[2]),
                 sizeBox(20),
               ],
             ),

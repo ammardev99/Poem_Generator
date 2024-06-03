@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/style.dart';
-import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/models/poem_model.dart';
 import 'package:poem_generator/utils/color.dart';
+import 'package:poem_generator/widgets/custom_button_actions.dart';
+import 'package:poem_generator/widgets/custom_formatting.dart';
+import 'package:poem_generator/widgets/custom_poem_post.dart';
+import 'package:poem_generator/widgets/custom_welcome_profile.dart';
 
 import 'logic.dart';
 
@@ -24,7 +27,7 @@ class HomePage extends StatelessWidget {
             child: Column(
               children: [
                 sizeBox(40),
-                profileWelcome(),
+                customWelcomeProfile(),
                 sizeBox(10),
                 searchBar(),
                 sizeBox(10),
@@ -34,7 +37,7 @@ class HomePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    myHeading("Categories"),
+                    customHeading("Categories"),
                     // GestureDetector(onTap: () {}, child: info("See all"))
                   ],
                 ),
@@ -51,7 +54,7 @@ class HomePage extends StatelessWidget {
                 for (var i = 0; i < poemPostList.length; i++)
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 5),
-                    child: poemPost(context, poemPostList[i]),
+                    child: customPoemPost(context, poemPostList[i]),
                   ),
               ],
             ),
@@ -70,7 +73,6 @@ class HomePage extends StatelessWidget {
             AppColors.primaryColor03, Icons.search),
         cursorColor: AppColors.primaryColor,
         style: const TextStyle(color: AppColors.secondaryColor),
-        autocorrect: true,
         enableSuggestions: true,
       ),
     );
@@ -78,16 +80,3 @@ class HomePage extends StatelessWidget {
 }
 
 
-  // Container searchBar() {
-  //   return Container(
-  //     decoration: searchDecoration(whiteColor, primaryColor03),
-  //     child: TextField(
-  //       decoration: searchStyle(
-  //           "Search ...", primaryColor, primaryColor03, Icons.search),
-  //       cursorColor: primaryColor,
-  //       style: TextStyle(color: secondaryColor),
-  //       autocorrect: true,
-  //       enableSuggestions: true,
-  //     ),
-  //   );
-  // }

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/style.dart';
-import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/utils/color.dart';
+import 'package:poem_generator/widgets/custom_formatting.dart';
 
 import 'logic.dart';
 
@@ -31,7 +31,7 @@ class GeneratePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   sizeBox(60),
-                  myHeading("Poem Genrator", AppColors.whiteColor),
+                  customHeading("Poem Genrator", AppColors.whiteColor),
                   const SizedBox(
                     height: 10,
                   ),
@@ -39,7 +39,7 @@ class GeneratePage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  myHeading("Length:", AppColors.whiteColor),
+                  customHeading("Length:", AppColors.whiteColor),
                   selectLength(),
                   const SizedBox(
                     height: 20,
@@ -57,7 +57,7 @@ class GeneratePage extends StatelessWidget {
                                       MediaQuery.of(context).size.width / 3,
                                   vertical: 20)),
                         ),
-                        child: myHeading("Generate", AppColors.secondaryColor),
+                        child: customHeading("Generate", AppColors.secondaryColor),
                       ),
                     ],
                   ),

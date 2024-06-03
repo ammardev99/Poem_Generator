@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/utils/color.dart';
+import 'package:poem_generator/widgets/custom_button_actions.dart';
+import 'package:poem_generator/widgets/custom_formatting.dart';
 
 import 'logic.dart';
 
@@ -78,11 +79,11 @@ Widget poemCard(BuildContext context) {
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  myHeading("Fillip Justic", AppColors.secondaryColor),
+                  customHeading("Fillip Justic", AppColors.secondaryColor),
                   const Spacer(),
                   const Icon(Icons.access_time_outlined, size: 15),
                   sizeBox(4),
-                  info("2h"),
+                  customInfo("2h"),
                 ],
               ),
             ],

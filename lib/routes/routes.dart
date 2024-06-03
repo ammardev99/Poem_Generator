@@ -28,7 +28,7 @@ class AppRoutes {
 
         GetPage(name: RouteName.poemApp, page: () => const PoemApp()),
 
-        GetPage(name: RouteName.categoryFeedScreen, page: () => const CategoryFeed(name: "0")),
+        GetPage(name: RouteName.categoryFeedScreen, page: () => const CategoryFeed(name: '')),
         GetPage(name: RouteName.poemInfoScreen, page: () => PoemInfoPage()),
 
         GetPage(name: RouteName.editProfilePage, page: () => EditprofilePage()),

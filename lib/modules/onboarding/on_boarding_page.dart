@@ -3,9 +3,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/models/onboarding_model.dart';
 import 'package:poem_generator/components/style.dart';
-import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
+import 'package:poem_generator/widgets/custom_formatting.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});
@@ -47,7 +47,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                           Get.offAndToNamed(RouteName.selectAccountScreen);
                         });
                       },
-                      child: info("Skip", AppColors.borderColor))),
+                      child: customInfo("Skip", AppColors.borderColor))),
             ),
             sizeBox(40),
             Expanded(
@@ -70,7 +70,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                         SvgPicture.asset(onBoardingScreen[index].image),
                         sizeBox(40),
                         Container(
-                            child: myTitle(onBoardingScreen[index].title,
+                            child: customTitle(onBoardingScreen[index].title,
                                 AppColors.secondaryColor)),
                       ],
                     ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/style.dart';
-import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/utils/color.dart';
+import 'package:poem_generator/widgets/custom_formatting.dart';
 
 import 'logic.dart';
 
@@ -24,7 +24,7 @@ class EditprofilePage extends StatelessWidget {
             ),
             backgroundColor: AppColors.primaryColor,
             centerTitle: true,
-            title: myHeading("Edit Profile", AppColors.whiteColor),
+            title: customHeading("Edit Profile", AppColors.whiteColor),
           ),
           body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
@@ -37,21 +37,21 @@ class EditprofilePage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      myHeading('User Name'),
+                      customHeading('User Name'),
                       sizeBox(5),
                       TextField(decoration: editProfileInputStyle("Full Name")),
                       sizeBox(15),
-                      myHeading('Email'),
+                      customHeading('Email'),
                       sizeBox(5),
                       TextField(
                           decoration: editProfileInputStyle("email@gmail.com")),
                       sizeBox(15),
-                      myHeading('Contact'),
+                      customHeading('Contact'),
                       sizeBox(5),
                       TextField(
                           decoration: editProfileInputStyle("Phone Number")),
                       sizeBox(15),
-                      myHeading('Age'),
+                      customHeading('Age'),
                       sizeBox(5),
                       TextField(decoration: editProfileInputStyle("Years")),
                       sizeBox(15),
@@ -71,7 +71,7 @@ class EditprofilePage extends StatelessWidget {
                                           MediaQuery.of(context).size.width / 3,
                                       vertical: 15)),
                             ),
-                            child: myHeading("Update", AppColors.whiteColor),
+                            child: customHeading("Update", AppColors.whiteColor),
                           ),
                         ],
                       ),
@@ -137,7 +137,7 @@ class EditprofilePage extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        myHeading("Gender:", AppColors.secondaryColor),
+        customHeading("Gender:", AppColors.secondaryColor),
         Radio(
           activeColor: AppColors.primaryColor,
           splashRadius: 0,

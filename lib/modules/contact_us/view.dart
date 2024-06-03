@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/style.dart';
-import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/utils/color.dart';
+import 'package:poem_generator/widgets/custom_formatting.dart';
 
 import 'logic.dart';
 
@@ -20,7 +20,7 @@ class ContactUsPage extends StatelessWidget {
           leading: const BackButton(
             color: AppColors.whiteColor,
           ),
-          title: myHeading("Contact Us", AppColors.whiteColor),
+          title: customHeading("Contact Us", AppColors.whiteColor),
           centerTitle: true,
           backgroundColor: AppColors.primaryColor,
         ),
@@ -32,15 +32,15 @@ class ContactUsPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 sizeBox(20),
-                myHeading('Name'),
+                customHeading('Name'),
                 sizeBox(5),
                 TextField(decoration: editProfileInputStyle("Enter Full Name")),
                 sizeBox(15),
-                myHeading('Email'),
+                customHeading('Email'),
                 sizeBox(5),
                 TextField(decoration: editProfileInputStyle("email@gmail.com")),
                 sizeBox(15),
-                myHeading('Your Message'),
+                customHeading('Your Message'),
                 sizeBox(5),
                 TextField(
                   decoration: editProfileInputStyle("Enter your message here"),
@@ -53,7 +53,7 @@ class ContactUsPage extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {},
                       style: nextButtonStyle(context),
-                      child: myHeading("Send a message", AppColors.whiteColor),
+                      child: customHeading("Send a message", AppColors.whiteColor),
                     ),
                   ],
                 ),

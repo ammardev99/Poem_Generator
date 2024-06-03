@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/models/poem_model.dart';
 import 'package:poem_generator/utils/color.dart';
+import 'package:poem_generator/widgets/custom_button_actions.dart';
+import 'package:poem_generator/widgets/custom_formatting.dart';
 
 poemInfoDialog(context, PoemPost? post) {
   return Get.defaultDialog(
@@ -50,13 +51,13 @@ poemInfoDialog(context, PoemPost? post) {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       post == null
-                          ? myHeading("Fillip Justic", AppColors.secondaryColor)
-                          : myHeading(
+                          ? customHeading("Fillip Name", AppColors.secondaryColor)
+                          : customHeading(
                               post.authorName, AppColors.secondaryColor),
                       const Spacer(),
                       const Icon(Icons.access_time_outlined, size: 15),
                       sizeBox(4),
-                      post == null ? info("2h") : info(post.time),
+                      post == null ? customInfo("2h") : customInfo(post.time),
                     ],
                   ),
                 ],

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/style.dart';
-import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/utils/color.dart';
+import 'package:poem_generator/widgets/custom_formatting.dart';
 
 import 'logic.dart';
 
@@ -20,7 +20,7 @@ class AboutUsPage extends StatelessWidget {
           leading: const BackButton(
             color: AppColors.whiteColor,
           ),
-          title: myHeading("About Us", AppColors.whiteColor),
+          title: customHeading("About Us", AppColors.whiteColor),
           centerTitle: true,
           backgroundColor: AppColors.primaryColor,
         ),
@@ -32,11 +32,11 @@ class AboutUsPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 sizeBox(20),
-                myTitle(
+                customTitle(
                   "Welcome to Poem  Generator",
                   AppColors.secondaryColor,
                 ),
-                myHeading(
+                customHeading(
                     "where poetry meets innovation. We are passionate creators dedicated to revolutionizing the world of poetry through the power of artificial intelligence."),
                 sizeBox(5),
                 Divider(
@@ -56,7 +56,7 @@ class AboutUsPage extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {},
                       style: nextButtonStyle(context),
-                      child: myHeading("More Apps", AppColors.whiteColor),
+                      child: customHeading("More Apps", AppColors.whiteColor),
                     ),
                   ],
                 ),
@@ -75,11 +75,11 @@ Widget aboutCard(String title, String text) {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       sizeBox(10),
-      myTitle(
+      customTitle(
         title,
         AppColors.secondaryColor,
       ),
-      info(text),
+      customInfo(text),
       sizeBox(5),
       Divider(
         color: AppColors.primaryColor03,

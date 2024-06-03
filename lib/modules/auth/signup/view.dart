@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/style.dart';
-import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
+import 'package:poem_generator/widgets/custom_button_actions.dart';
+import 'package:poem_generator/widgets/custom_formatting.dart';
 
 import 'logic.dart';
 
@@ -40,7 +41,7 @@ class SignUpPage extends StatelessWidget {
                 height: 80,
                 child: SvgPicture.asset('assets/svg/logoPoemGenerator.svg')),
               sizeBox(40),
-                myTitle("Create your Account", AppColors.secondaryColor),
+                customTitle("Create your Account", AppColors.secondaryColor),
                 const SizedBox(height: 20),
                 // enter full name
                 TextField(
@@ -98,9 +99,9 @@ class SignUpPage extends StatelessWidget {
                 // remember password
                 rememberPassword(),
                 const SizedBox(height: 40),
-                moveButton("Sign up", context, RouteName.poemApp, 'r'),
+                customActionButton("Sign up", context, RouteName.poemApp, 'r'),
                 sizeBox(10),
-                infoAction(
+                customInfoAction(
                   "Do you have an account?",
                   "Sign in",
                   RouteName.loginPage,
@@ -137,7 +138,7 @@ class SignUpPage extends StatelessWidget {
               width: 2,
             ),
           ),
-          myHeading("Remember me"),
+          customHeading("Remember me"),
         ],
       ),
     );

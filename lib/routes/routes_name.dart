@@ -8,6 +8,7 @@ class RouteName {
   static const String otpPage = '/otp';
 
   static const String poemApp = '/poemApp';
+  //home,category,favorite,menu
 
   static const String categoryFeedScreen = '/categoryFeed';
   static const String poemInfoScreen = '/poemInfo';

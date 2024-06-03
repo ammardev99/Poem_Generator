@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
+import 'package:poem_generator/widgets/custom_button_actions.dart';
+import 'package:poem_generator/widgets/custom_formatting.dart';
 
 import 'logic.dart';
 
@@ -31,8 +32,8 @@ class OptPage extends StatelessWidget {
                     child:
                         SvgPicture.asset('assets/svg/logoPoemGenerator.svg')),
                 sizeBox(40),
-                myTitle("Enter OTP", AppColors.secondaryColor),
-                info("Enter your OTP code here to verify"),
+                customTitle("Enter OTP", AppColors.secondaryColor),
+                customInfo("Enter your OTP code here to verify"),
                 const SizedBox(height: 20),
                 // enter OTP
                 Row(
@@ -45,9 +46,9 @@ class OptPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 20),
-                moveButton("Confirm", context, RouteName.poemApp, 'r'),
+                customActionButton("Confirm", context, RouteName.poemApp, 'r'),
                 sizeBox(10),
-                infoAction(
+                customInfoAction(
                   "Don't get code?",
                   "Resend Code",
                   RouteName.emailVerifyPage,

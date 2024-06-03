@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/style.dart';
-import 'package:poem_generator/components/widgets.dart';
 import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
+import 'package:poem_generator/widgets/custom_button_actions.dart';
+import 'package:poem_generator/widgets/custom_formatting.dart';
 
 import 'logic.dart';
 
@@ -32,18 +33,18 @@ class EmailVerifyPage extends StatelessWidget {
                     child:
                         SvgPicture.asset('assets/svg/logoPoemGenerator.svg')),
                 sizeBox(40),
-                myTitle("Forgot Password", AppColors.secondaryColor),
-                info("Enter email to verify your account"),
+                customTitle("Forgot Password", AppColors.secondaryColor),
+                customInfo("Enter email to verify your account"),
                 const SizedBox(height: 20),
                 // enter email
                 TextField(
                   decoration: inputStyle(Icons.email, 'Email'),
                 ),
                 const SizedBox(height: 20),
-                moveButton("Verify", context, RouteName.otpPage, 'm'),
+                customActionButton("Verify", context, RouteName.otpPage, 'm'),
                 // enter password
                 sizeBox(10),
-                infoAction(
+                customInfoAction(
                   "Don't have an account?",
                   "Sign up",
                   RouteName.signUpPage,
