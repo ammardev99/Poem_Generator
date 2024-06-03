@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/style.dart';
 import 'package:poem_generator/components/widgets.dart';
-import 'package:poem_generator/modules/contactus/view.dart';
+import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
@@ -54,7 +54,7 @@ class HelpPage extends StatelessWidget {
             children: [
               sizeBox(20),
               myTitle(
-                "We’re here to help you with anything and everyting on Poem Generator",
+                "We’re here to help you with anything and everything on Poem Generator",
                 AppColors.secondaryColor,
               ),
               sizeBox(5),
@@ -87,7 +87,7 @@ class HelpPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
-                    onPressed: () => Get.to(ContactusPage()),
+                    onPressed: () => Get.toNamed(RouteName.contactUsPage),
                     style: nextButtonStyle(context),
                     child: myHeading("Send a message", AppColors.whiteColor),
                   ),

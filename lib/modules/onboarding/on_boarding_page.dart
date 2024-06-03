@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/modules/auth/selectaccount.dart';
 import 'package:poem_generator/models/onboarding_model.dart';
 import 'package:poem_generator/components/style.dart';
 import 'package:poem_generator/components/widgets.dart';
+import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
 
 class OnBoardingPage extends StatefulWidget {
@@ -38,13 +38,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           children: [
             //Skip
             Padding(
-              padding: const EdgeInsets.all(40),
+              padding: const EdgeInsets.all(20),
               child: Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
                       onPressed: () {
                         setState(() {
-                          Get.offAll(const SelectAccount());
+                          Get.offAndToNamed(RouteName.selectAccountScreen);
                         });
                       },
                       child: info("Skip", AppColors.borderColor))),
@@ -102,11 +102,11 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                               curve: Curves.easeIn,
                             );
                           } else {
-                            Get.offAll(const SelectAccount());
+                            Get.offAndToNamed(RouteName.selectAccountScreen);
                           }
                         });
                       },
-                      style: buttonstyle(),
+                      style: buttonStyle(),
                       child: Text(currentIndex == onBoardingScreen.length - 1
                           ? "Continue"
                           : "Next"),

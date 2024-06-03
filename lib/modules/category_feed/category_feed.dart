@@ -4,9 +4,10 @@ import 'package:poem_generator/models/poem_model.dart';
 import 'package:poem_generator/utils/color.dart';
 
 class CategoryFeed extends StatelessWidget {
-  final String name;
+  final String? name;
 
   const CategoryFeed({super.key, required this.name});
+
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class CategoryFeed extends StatelessWidget {
             leading: const BackButton(
               color: AppColors.whiteColor,
             ),
-            title: myHeading(name, AppColors.whiteColor),
+            title: myHeading(name??"", AppColors.whiteColor),
             backgroundColor: AppColors.primaryColor,
             centerTitle: true,
           ),

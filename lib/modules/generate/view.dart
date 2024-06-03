@@ -8,12 +8,12 @@ import 'package:poem_generator/utils/color.dart';
 import 'logic.dart';
 
 // ignore: must_be_immutable
-class GenratePage extends StatelessWidget {
-  GenratePage({Key? key}) : super(key: key);
+class GeneratePage extends StatelessWidget {
+  GeneratePage({Key? key}) : super(key: key);
 
-  final logic = Get.put(GenrateLogic());
-  final state = Get.find<GenrateLogic>().state;
-  String getlength = "";
+  final logic = Get.put(GenerateLogic());
+  final state = Get.find<GenerateLogic>().state;
+  String getLength = "";
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +68,6 @@ class GenratePage extends StatelessWidget {
               ),
             ),
             sizeBox(40),
-            // Genrate poem here
             SvgPicture.asset('assets/svg/empty.svg'),
           ],
         ),
@@ -84,7 +83,7 @@ class GenratePage extends StatelessWidget {
           activeColor: AppColors.whiteColor,
           splashRadius: 0,
           value: "Regular",
-          groupValue: getlength,
+          groupValue: getLength,
           onChanged: (value) {
             // setState(() {
             //   getlength = value!;
@@ -96,7 +95,7 @@ class GenratePage extends StatelessWidget {
           activeColor: AppColors.whiteColor,
           splashRadius: 0,
           value: "Medium",
-          groupValue: getlength,
+          groupValue: getLength,
           onChanged: (value) {
             // setState(() {
             //   getlength = value!;
@@ -108,7 +107,7 @@ class GenratePage extends StatelessWidget {
           activeColor: AppColors.whiteColor,
           splashRadius: 0,
           value: "Long",
-          groupValue: getlength,
+          groupValue: getLength,
           onChanged: (value) {
             // setState(() {
             //   getlength = value!;

@@ -2,6 +2,6 @@ import 'package:get/get.dart';
 
 import 'state.dart';
 
-class ContactusLogic extends GetxController {
+class ContactUsLogic extends GetxController {
   final ContactusState state = ContactusState();
 }

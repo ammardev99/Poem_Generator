@@ -6,11 +6,11 @@ import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
-class AboutusPage extends StatelessWidget {
-  AboutusPage({Key? key}) : super(key: key);
+class AboutUsPage extends StatelessWidget {
+  AboutUsPage({Key? key}) : super(key: key);
 
-  final logic = Get.put(AboutusLogic());
-  final state = Get.find<AboutusLogic>().state;
+  final logic = Get.put(AboutUsLogic());
+  final state = Get.find<AboutUsLogic>().state;
 
   @override
   Widget build(BuildContext context) {

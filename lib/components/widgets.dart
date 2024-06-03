@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/models/poem_model.dart';
-import 'package:poem_generator/modules/categoryfeed/category_feed.dart';
+import 'package:poem_generator/modules/category_feed/category_feed.dart';
 import 'package:poem_generator/components/style.dart';
 import 'package:poem_generator/models/category_model.dart';
-import 'package:poem_generator/modules/poeminfo/poem_info_dialog.dart';
-import 'package:poem_generator/modules/poeminfo/view.dart';
+import 'package:poem_generator/modules/poem_info/poem_info_dialog.dart';
+import 'package:poem_generator/modules/poem_info/view.dart';
+import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share_it/share_it.dart';
@@ -52,14 +53,14 @@ Widget sizeBox(double w, [double? h]) {
   );
 }
 
-Widget moveButtom(String text, context, page, String action) {
+Widget moveButton(String text, context, page, String action) {
   return ElevatedButton(
     onPressed: () {
       if (page != null) {
-        action == 'r' ? Get.offAll(page) : Get.to(page);
+        action == 'r' ? Get.offAndToNamed(page) : Get.toNamed(page);
       }
     },
-    style: buttonstyle(),
+    style: buttonStyle(),
     child: Text(text),
   );
 }
@@ -77,7 +78,7 @@ Widget infoAction(
       TextButton(
           onPressed: () {
             if (page != null) {
-              Get.to(page);
+              Get.toNamed(page);
             }
           },
           style: ButtonStyle(
@@ -111,8 +112,9 @@ Widget menuOption(IconData icon, String txt, BuildContext context, [page]) {
                 backgroundColor: AppColors.secondaryColor,
                 duration: const Duration(milliseconds: 200),
               ))
-            : Navigator.push(
-                context, MaterialPageRoute(builder: (context) => page));
+            : 
+            page== RouteName.loginPage? Get.toNamed(page): 
+            Get.toNamed(page);
       },
     ),
   );
@@ -211,7 +213,7 @@ Widget guestOption(String text, page) {
   return InkWell(
     borderRadius: BorderRadius.circular(100),
     onTap: () {
-      Get.offAll(page);
+      Get.offAndToNamed(page);
     },
     child: Container(
       width: double.infinity,
@@ -233,7 +235,8 @@ Widget poemCategory(Category category) {
     ),
     child: InkWell(
       onTap: () {
-        Get.to(CategoryFeed(name: category.type));
+        Get.toNamed(RouteName.categoryFeedScreen);
+        // Get.to(CategoryFeed(name: category.type));
       },
       borderRadius: BorderRadius.circular(8),
       hoverColor: AppColors.whiteColor,
@@ -279,7 +282,7 @@ Widget poemOfTheDay(Category category) {
     ),
     child: InkWell(
       onTap: () {
-        Get.to(PoeminfoPage());
+        Get.to(PoemInfoPage());
       },
       borderRadius: BorderRadius.circular(8),
       hoverColor: AppColors.whiteColor,
@@ -457,6 +460,9 @@ Widget poemPost(BuildContext context, PoemPost post) {
 Widget categoriesButtons() {
   return SingleChildScrollView(
     scrollDirection: Axis.horizontal, // Ensures horizontal scrolling
+    physics: const BouncingScrollPhysics(
+      decelerationRate: ScrollDecelerationRate.normal,
+    ),
     child: Row(
       children: [
         sizeBox(15),
@@ -488,7 +494,7 @@ Widget categoryButton(String text, Color color) {
   );
 }
 
-Widget profileWelcom() {
+Widget profileWelcome() {
   return ListTile(
     title: myHeading("Hi, Noman"),
     subtitle: info("Looking for specific poem?", AppColors.secondaryColor),

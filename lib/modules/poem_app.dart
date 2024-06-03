@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
 import 'package:poem_generator/modules/categories/view.dart';
 import 'package:poem_generator/modules/favorite/view.dart';
-import 'package:poem_generator/modules/genrate/view.dart';
+import 'package:poem_generator/modules/generate/view.dart';
 import 'package:poem_generator/modules/home/view.dart';
 import 'package:poem_generator/modules/menu/view.dart';
 import 'package:poem_generator/utils/color.dart';
@@ -25,22 +25,25 @@ class _PoemAppState extends State<PoemApp> {
     const TabItem(icon: Icons.menu,title: 'Menu',),
   ];
 
-// main screens for app navigation 
+// main screens for app navigation
 final screen=[
- HomePage(),
+HomePage(),
 CategoriesPage(),
-GenratePage(),
+GeneratePage(),
 FavoritePage(),
 MenuPage(),
 ];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBody: true,
-      body: screen[_selectedScreenIndex],
-      bottomNavigationBar: bottomBar(),
-    );
+    return  SafeArea(
+      child: Scaffold(
+              extendBody: true,
+              body: screen[_selectedScreenIndex],
+              bottomNavigationBar: bottomBar(),
+            ),
+    )
+    ;
   }
 
 // awesome_bottom_bar 
@@ -61,5 +64,3 @@ MenuPage(),
     );
   }
 }
-
-

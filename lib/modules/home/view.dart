@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
             child: Column(
               children: [
                 sizeBox(40),
-                profileWelcom(),
+                profileWelcome(),
                 sizeBox(10),
                 searchBar(),
                 sizeBox(10),

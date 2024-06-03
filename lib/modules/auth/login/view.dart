@@ -3,9 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/style.dart';
 import 'package:poem_generator/components/widgets.dart';
-import 'package:poem_generator/modules/auth/mailverify/view.dart';
-import 'package:poem_generator/modules/auth/signup/view.dart';
-import 'package:poem_generator/modules/poem_app.dart';
+import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
@@ -91,18 +89,18 @@ class LoginPage extends StatelessWidget {
                 // remember password
                 rememberPassword(),
                 const SizedBox(height: 40),
-                moveButtom("Sign in", context, const PoemApp(), 'r'),
+                moveButton("Sign in", context, RouteName.poemApp, 'r'),
                 sizeBox(10),
                 GestureDetector(
                     onTap: () {
-                      Get.to( MailverifyPage());
+                      Get.toNamed(RouteName.emailVerifyPage);
                     },
                     child: myHeading("Forgot the password?", AppColors.secondaryColor)),
                 sizeBox(10),
                 infoAction(
                   "Don't have an account?",
                   "Sign up",
-                  SignupPage(),
+                  RouteName.signUpPage,
                 ),
               ],
             ),

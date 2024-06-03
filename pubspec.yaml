@@ -41,6 +41,15 @@ dependencies:
   url_launcher: ^6.2.6
   share_it: ^0.7.0
   share_me: ^0.0.17
+  rename_app: ^1.3.2
+  flutter_launcher_icons: ^0.13.1
+  animated_splash_screen: ^1.3.0
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/png/app_icon.png"
+  min_sdk_android: 21
+
 
 dev_dependencies:
   flutter_test:

@@ -6,11 +6,11 @@ import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
-class ContactusPage extends StatelessWidget {
-  ContactusPage({Key? key}) : super(key: key);
+class ContactUsPage extends StatelessWidget {
+  ContactUsPage({Key? key}) : super(key: key);
 
-  final logic = Get.put(ContactusLogic());
-  final state = Get.find<ContactusLogic>().state;
+  final logic = Get.put(ContactUsLogic());
+  final state = Get.find<ContactUsLogic>().state;
 
   @override
   Widget build(BuildContext context) {
@@ -34,16 +34,16 @@ class ContactusPage extends StatelessWidget {
                 sizeBox(20),
                 myHeading('Name'),
                 sizeBox(5),
-                TextField(decoration: editProfileinputStyle("Enter Full Name")),
+                TextField(decoration: editProfileInputStyle("Enter Full Name")),
                 sizeBox(15),
                 myHeading('Email'),
                 sizeBox(5),
-                TextField(decoration: editProfileinputStyle("email@gmail.com")),
+                TextField(decoration: editProfileInputStyle("email@gmail.com")),
                 sizeBox(15),
                 myHeading('Your Message'),
                 sizeBox(5),
                 TextField(
-                  decoration: editProfileinputStyle("Enter your message here"),
+                  decoration: editProfileInputStyle("Enter your message here"),
                   maxLines: 5,
                 ),
                 sizeBox(40),

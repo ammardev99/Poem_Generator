@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/modules/auth/selectaccount.dart';
 import 'package:poem_generator/components/style.dart';
 import 'package:poem_generator/components/widgets.dart';
-import 'package:poem_generator/modules/auth/login/view.dart';
-import 'package:poem_generator/modules/poem_app.dart';
+import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
 
 // ignore: must_be_immutable
-class SignupPage extends StatelessWidget {
-  SignupPage({Key? key}) : super(key: key);
+class SignUpPage extends StatelessWidget {
+  SignUpPage({Key? key}) : super(key: key);
 
-  final logic = Get.put(SignupLogic());
-  final state = Get.find<SignupLogic>().state;
+  final logic = Get.put(SignUpLogic());
+  final state = Get.find<SignUpLogic>().state;
   bool showPassword = true;
   bool rememberMe = false;
 
@@ -26,7 +24,7 @@ class SignupPage extends StatelessWidget {
         appBar: AppBar(
           leading: BackButton(
             onPressed: () {
-              Get.offAll(const SelectAccount());
+              Get.offAllNamed(RouteName.selectAccountScreen);
             },
           ),
         ),
@@ -100,12 +98,12 @@ class SignupPage extends StatelessWidget {
                 // remember password
                 rememberPassword(),
                 const SizedBox(height: 40),
-                moveButtom("Sign up", context, const PoemApp(), 'r'),
+                moveButton("Sign up", context, RouteName.poemApp, 'r'),
                 sizeBox(10),
                 infoAction(
                   "Do you have an account?",
                   "Sign in",
-                  LoginPage(),
+                  RouteName.loginPage,
                 ),
               ],
             ),

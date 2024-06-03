@@ -2,6 +2,6 @@ import 'package:get/get.dart';
 
 import 'state.dart';
 
-class PoeminfoLogic extends GetxController {
+class PoemInfoLogic extends GetxController {
   final PoeminfoState state = PoeminfoState();
 }

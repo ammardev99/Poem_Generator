@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/components/widgets.dart';
-import 'package:poem_generator/modules/auth/mailverify/view.dart';
-import 'package:poem_generator/modules/poem_app.dart';
+import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
 
 import 'logic.dart';
@@ -26,13 +25,14 @@ class OptPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-              sizeBox(80),
-              SizedBox(
-                height: 80,
-                child: SvgPicture.asset('assets/svg/logoPoemGenerator.svg')),
-              sizeBox(40),
+                sizeBox(80),
+                SizedBox(
+                    height: 80,
+                    child:
+                        SvgPicture.asset('assets/svg/logoPoemGenerator.svg')),
+                sizeBox(40),
                 myTitle("Enter OTP", AppColors.secondaryColor),
-                info("Enter your OTP code here to varify"),
+                info("Enter your OTP code here to verify"),
                 const SizedBox(height: 20),
                 // enter OTP
                 Row(
@@ -45,12 +45,12 @@ class OptPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 20),
-                moveButtom("Confirm", context, const PoemApp(), 'r'),
+                moveButton("Confirm", context, RouteName.poemApp, 'r'),
                 sizeBox(10),
                 infoAction(
                   "Don't get code?",
                   "Resend Code",
-                  MailverifyPage(),
+                  RouteName.emailVerifyPage,
                 ),
               ],
             ),
@@ -64,17 +64,16 @@ class OptPage extends StatelessWidget {
     return SizedBox(
       width: 50,
       child: TextField(
-        textAlign: TextAlign.center, // Center text input
-        keyboardType: TextInputType.number, // Allow only numeric input
-        maxLength: 1, // Limit input to single character
-
+        textAlign: TextAlign.center,
+        keyboardType: TextInputType.number,
+        maxLength: 1,
         onChanged: (value) {},
         decoration: InputDecoration(
-          counterText: "", // Hide character counter
+          counterText: "",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10.0),
             borderSide: const BorderSide(
-              color:AppColors.primaryColor,
+              color: AppColors.primaryColor,
             ),
           ),
           focusedBorder: OutlineInputBorder(

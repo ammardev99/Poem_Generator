@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:poem_generator/utils/color.dart';
 
 // ElevatedButton.style
-ButtonStyle buttonstyle() {
+ButtonStyle buttonStyle() {
   return ElevatedButton.styleFrom(
       foregroundColor: AppColors.whiteColor,
       backgroundColor: AppColors.primaryColor,
@@ -41,7 +41,7 @@ InputDecoration inputStyle(
 }
 
 // Edit profile input style
-InputDecoration editProfileinputStyle(String hint) {
+InputDecoration editProfileInputStyle(String hint) {
   return InputDecoration(
     contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
     hintText: hint,

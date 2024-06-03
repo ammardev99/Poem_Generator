@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:poem_generator/components/widgets.dart';
-import 'package:poem_generator/modules/auth/login/view.dart';
-import 'package:poem_generator/modules/auth/signup/view.dart';
-import 'package:poem_generator/modules/poem_app.dart';
+import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
 
 
@@ -26,7 +24,7 @@ class SelectAccount extends StatelessWidget {
               sizeBox(40),
               myTitle("Let's you in"),
               sizeBox(20),
-              guestOption("Start as a Guest", const PoemApp()),
+              guestOption("Start as a Guest", RouteName.poemApp),
               sizeBox(20),
               startOption("Continue with Facebook",Icons.facebook,),
               sizeBox(20),
@@ -34,8 +32,8 @@ class SelectAccount extends StatelessWidget {
               sizeBox(20),
               startOption("Continue with Apple",Icons.apple,),
               sizeBox(40),
-              moveButtom("Sign in",context,LoginPage(),"m",),
-              infoAction("Don't have an  account?", "Sign up", SignupPage(),)
+              moveButton("Sign in",context,RouteName.loginPage,"m",),
+              infoAction("Don't have an  account?", "Sign up", RouteName.signUpPage,)
             ],
           ),
         ),

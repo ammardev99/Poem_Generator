@@ -2,6 +2,6 @@ import 'package:get/get.dart';
 
 import 'state.dart';
 
-class GenrateLogic extends GetxController {
+class GenerateLogic extends GetxController {
   final GenrateState state = GenrateState();
 }

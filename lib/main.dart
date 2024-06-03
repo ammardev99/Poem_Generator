@@ -1,16 +1,18 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/modules/onboarding/onboardingpage.dart';
+import 'package:poem_generator/modules/onboarding/on_boarding_page.dart';
+import 'package:poem_generator/routes/routes.dart';
 import 'package:poem_generator/utils/color.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle( const SystemUiOverlayStyle(
-    statusBarColor: AppColors.primaryColor, 
-    statusBarBrightness: Brightness.light, 
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarColor: AppColors.primaryColor,
+    statusBarBrightness: Brightness.light,
   ));
   runApp(const MyApp());
-  
 }
 
 class MyApp extends StatelessWidget {
@@ -25,11 +27,19 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
         useMaterial3: true,
       ),
-      home: const OnBoardingPage(),
+      getPages: AppRoutes.appRoutes(),
+      home: AnimatedSplashScreen(
+          duration: 2000,
+
+          // splashTransition: SplashTransition.fadeTransition,
+          centered: true,
+          splash: SvgPicture.asset(
+            'assets/svg/logoPoemGenerator.svg',
+            semanticsLabel: 'Poem Generator',
+            height: 80,
+          ),
+          nextScreen: const OnBoardingPage()),
     );
   }
 }
-
-
-
-
+// end{code}

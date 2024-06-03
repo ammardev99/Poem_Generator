@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 
 import 'logic.dart';
 
-class CategoryfeedPage extends StatelessWidget {
-  CategoryfeedPage({Key? key}) : super(key: key);
+class CategorizedPage extends StatelessWidget {
+  CategorizedPage({Key? key}) : super(key: key);
 
   final logic = Get.put(CategoryfeedLogic());
   final state = Get.find<CategoryfeedLogic>().state;
