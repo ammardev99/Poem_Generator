@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/models/onboarding_model.dart';
-import 'package:poem_generator/components/style.dart';
 import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
 import 'package:poem_generator/widgets/custom_formatting.dart';
+import 'package:poem_generator/widgets/custom_style.dart';
 
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});

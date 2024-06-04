@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/components/style.dart';
 import 'package:poem_generator/models/category_model.dart';
 import 'package:poem_generator/modules/category_feed/category_feed.dart';
 import 'package:poem_generator/utils/color.dart';
 import 'package:poem_generator/widgets/custom_formatting.dart';
+import 'package:poem_generator/widgets/custom_style.dart';
 import 'package:share_it/share_it.dart';
 
 
@@ -13,7 +13,7 @@ Widget customActionButton(String text, context, page, String action) {
   return ElevatedButton(
     onPressed: () {
       if (page != null) {
-        action == 'r' ? Get.offAndToNamed(page) : Get.toNamed(page);
+        action == 'r' ? Get.offAllNamed(page) : Get.toNamed(page);
       }
     },
     style: buttonStyle(),

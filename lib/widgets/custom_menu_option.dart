@@ -29,7 +29,7 @@ Widget customMenuOption(IconData icon, String txt, BuildContext context, [page])
                 duration: const Duration(milliseconds: 200),
               ))
             : 
-            page== RouteName.loginPage? Get.toNamed(page): 
+            page== RouteName.selectAccountScreen? Get.offAndToNamed(page): 
             Get.toNamed(page);
       },
     ),

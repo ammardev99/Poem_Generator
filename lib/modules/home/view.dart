@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/components/style.dart';
 import 'package:poem_generator/models/poem_model.dart';
 import 'package:poem_generator/utils/color.dart';
 import 'package:poem_generator/widgets/custom_button_actions.dart';
 import 'package:poem_generator/widgets/custom_formatting.dart';
 import 'package:poem_generator/widgets/custom_poem_post.dart';
+import 'package:poem_generator/widgets/custom_style.dart';
 import 'package:poem_generator/widgets/custom_welcome_profile.dart';
 
 import 'logic.dart';

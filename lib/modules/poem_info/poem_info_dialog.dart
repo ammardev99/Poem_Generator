@@ -85,9 +85,9 @@ poemInfoDialog(context, PoemPost? post) {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  iconWithLabel(Icons.thumb_up_alt_outlined, "Like"),
-                  iconWithLabel(Icons.favorite_border, "Favorite"),
-                  iconWithLabel(Icons.share, "Share"),
+                  iconWithLabel(Icons.thumb_up_alt_outlined, ""),
+                  iconWithLabel(Icons.favorite_border, ""),
+                  iconWithLabel(Icons.share, ""),
                 ],
               ),
             ],

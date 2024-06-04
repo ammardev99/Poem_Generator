@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:poem_generator/components/style.dart';
 import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
 import 'package:poem_generator/widgets/custom_formatting.dart';
+import 'package:poem_generator/widgets/custom_style.dart';
 
 import 'logic.dart';
 

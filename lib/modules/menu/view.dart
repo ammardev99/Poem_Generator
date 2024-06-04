@@ -26,7 +26,7 @@ class MenuPage extends StatelessWidget {
         customMenuOption(Icons.help_outline,'Help',context, RouteName.helpPage),
         customMenuOption(Icons.info_outline,'About us',context, RouteName.aboutUsPage),
         customMenuOption(Icons.support_agent,'Contact us',context, RouteName.contactUsPage),
-        customMenuOption(Icons.logout, 'Log out', context, RouteName.loginPage),
+        customMenuOption(Icons.logout, 'Log out', context, RouteName.selectAccountScreen),
       ],
     ));
   }
