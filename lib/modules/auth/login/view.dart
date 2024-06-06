@@ -3,7 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:poem_generator/routes/routes_name.dart';
 import 'package:poem_generator/utils/color.dart';
-import 'package:poem_generator/widgets/custom_button_actions.dart';
+import 'package:poem_generator/utils/constant.dart';
+import 'package:poem_generator/widgets/custom_apploading.dart';
 import 'package:poem_generator/widgets/custom_formatting.dart';
 import 'package:poem_generator/widgets/custom_style.dart';
 
@@ -11,7 +12,7 @@ import 'logic.dart';
 
 // ignore: must_be_immutable
 class LoginPage extends StatelessWidget {
-  LoginPage({Key? key}) : super(key: key);
+  LoginPage({super.key});
 
   final logic = Get.put(LoginLogic());
   final state = Get.find<LoginLogic>().state;
@@ -20,90 +21,125 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-              sizeBox(10),
-              SizedBox(
-                height: 80,
-                child: SvgPicture.asset('assets/svg/logoPoemGenerator.svg')),
-              sizeBox(40),
+    return AppLoadingWidget(
+      inAsyncCall: logic.dataloading,
+      child: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(),
+          body: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: Form(
+                key: logic.formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    sizeBox(10),
+                    SizedBox(
+                        height: 80,
+                        child: SvgPicture.asset(
+                            'assets/svg/logoPoemGenerator.svg')),
+                    sizeBox(40),
 
-                const SizedBox(height: 10),
-                customTitle("Login", AppColors.secondaryColor),
-                const SizedBox(height: 20),
-                // enter email
-                TextField(
-                  decoration: inputStyle(Icons.email, 'Email'),
-                ),
-                const SizedBox(height: 20),
-                // enter password
-                TextField(
-                  decoration: InputDecoration(
-                    contentPadding:
-                        const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                    prefixIcon: const Icon(
-                      Icons.lock,
-                      size: 20,
-                      color: AppColors.primaryColor,
-                    ),
-                    hintText: "Password",
-                    hintStyle: const TextStyle(color: AppColors.borderColor),
-                    suffixIcon: IconButton(
-                      hoverColor: Colors.transparent,
-                      onPressed: () {
-                        // setState(() {
-                        //   showPassword = !showPassword;
-                        // });
+                    const SizedBox(height: 10),
+                    customTitle("Login", AppColors.secondaryColor),
+                    const SizedBox(height: 20),
+                    // enter email
+                    TextFormField(
+                        controller: state.emailController,
+                        decoration: inputStyle(Icons.email, 'Email'),
+                        validator: (value) {
+                          if ((value ?? "").isEmpty) {
+                            return ErrorStrings.emailReq;
+                          } else if (!GetUtils.isEmail(value!)) {
+                            return ErrorStrings.emailInvalid;
+                          }
+                          return null;
+                        }),
+                    const SizedBox(height: 20),
+                    // enter password
+                    TextFormField(
+                      controller: state.passwordController,
+                      validator: (value) {
+                        if ((value ?? "").isEmpty) {
+                          return ErrorStrings.passwordReq;
+                        }
+                        return null;
                       },
-                      icon: Icon(
-                        showPassword == true
-                            ? Icons.visibility
-                            : Icons.visibility_off,
-                        color: AppColors.borderColor,
+
+                      decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.symmetric(
+                            horizontal: 0, vertical: 0),
+                        prefixIcon: const Icon(
+                          Icons.lock,
+                          size: 20,
+                          color: AppColors.primaryColor,
+                        ),
+                        hintText: "Password",
+                        hintStyle:
+                            const TextStyle(color: AppColors.borderColor),
+                        suffixIcon: IconButton(
+                          hoverColor: Colors.transparent,
+                          onPressed: () {
+                            // setState(() {
+                            //   showPassword = !showPassword;
+                            // });
+                          },
+                          icon: Icon(
+                            showPassword == true
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            color: AppColors.borderColor,
+                          ),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                          borderSide: const BorderSide(
+                            color: AppColors.borderColor,
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                          borderSide: const BorderSide(
+                            color: AppColors.primaryColor,
+                          ),
+                        ),
                       ),
+                      obscureText:
+                          showPassword, // Password visibility based on showPassword
                     ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(100),
-                      borderSide: const BorderSide(
-                        color: AppColors.borderColor,
-                      ),
+                    const SizedBox(height: 10),
+                    // remember password
+                    rememberPassword(),
+                    const SizedBox(height: 40),
+                    ElevatedButton(
+                      onPressed: () {
+                        logic.login();
+                        logic.update();
+                      },
+                      style: buttonStyle(),
+                      child: const Text('Login'),
                     ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(100),
-                      borderSide: const BorderSide(
-                        color: AppColors.primaryColor,
-                      ),
+
+                    // customActionButton(
+                    //     "Sign in", context, RouteName.poemApp, 'r'),
+                    // sizeBox(10),
+                    GestureDetector(
+                        onTap: () {
+                          Get.toNamed(RouteName.emailVerifyPage);
+                        },
+                        child: customHeading(
+                            "Forgot the password?", AppColors.secondaryColor)),
+                    sizeBox(10),
+                    customInfoAction(
+                      "Don't have an account?",
+                      "Sign up",
+                      RouteName.signUpPage,
                     ),
-                  ),
-                  obscureText:
-                      showPassword, // Password visibility based on showPassword
+                  ],
                 ),
-                const SizedBox(height: 10),
-                // remember password
-                rememberPassword(),
-                const SizedBox(height: 40),
-                customActionButton("Sign in", context, RouteName.poemApp, 'r'),
-                sizeBox(10),
-                GestureDetector(
-                    onTap: () {
-                      Get.toNamed(RouteName.emailVerifyPage);
-                    },
-                    child: customHeading("Forgot the password?", AppColors.secondaryColor)),
-                sizeBox(10),
-                customInfoAction(
-                  "Don't have an account?",
-                  "Sign up",
-                  RouteName.signUpPage,
-                ),
-              ],
+              ),
             ),
           ),
         ),

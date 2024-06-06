@@ -4,5 +4,6 @@
         "Mailverify",
         "Noman"
     ],
-    "cmake.sourceDirectory": "E:/Drive 494/Flutter/Apps/poem/Poem_Generator/windows"
+    "cmake.sourceDirectory": "E:/Drive 494/Flutter/Apps/poem/Poem_Generator/windows",
+    "java.configuration.updateBuildConfiguration": "interactive"
 }

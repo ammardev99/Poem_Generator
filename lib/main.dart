@@ -9,7 +9,8 @@ import 'package:poem_generator/modules/onboarding/on_boarding_page.dart';
 import 'package:poem_generator/routes/routes.dart';
 import 'package:poem_generator/utils/color.dart';
 
-void main() async {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

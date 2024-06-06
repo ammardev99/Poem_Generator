@@ -1,5 +1,12 @@
+import 'package:flutter/widgets.dart';
+
 class LoginState {
+  TextEditingController? emailController;
+  TextEditingController? passwordController;
+
   LoginState() {
-    ///Initialize variables
+    emailController = TextEditingController();
+   passwordController = TextEditingController();
+
   }
 }
