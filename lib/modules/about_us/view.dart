@@ -7,7 +7,7 @@ import 'package:poem_generator/widgets/custom_style.dart';
 import 'logic.dart';
 
 class AboutUsPage extends StatelessWidget {
-  AboutUsPage({Key? key}) : super(key: key);
+  AboutUsPage({super.key});
 
   final logic = Get.put(AboutUsLogic());
   final state = Get.find<AboutUsLogic>().state;

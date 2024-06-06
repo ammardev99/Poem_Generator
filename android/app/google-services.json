@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "481196523769",
+    "project_id": "poemgenerator-a2d7a",
+    "storage_bucket": "poemgenerator-a2d7a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481196523769:android:52893f5719dd34fbcca228",
+        "android_client_info": {
+          "package_name": "com.example.poem_generator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAmRQRheun0P903ziMo2SGyW6_totwoz4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
