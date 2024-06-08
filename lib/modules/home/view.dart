@@ -11,7 +11,7 @@ import 'package:poem_generator/widgets/custom_welcome_profile.dart';
 import 'logic.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+  HomePage({super.key});
 
   final logic = Get.put(HomeLogic());
   final state = Get.find<HomeLogic>().state;

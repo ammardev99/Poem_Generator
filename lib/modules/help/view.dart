@@ -9,7 +9,7 @@ import 'logic.dart';
 
 // ignore: must_be_immutable
 class HelpPage extends StatelessWidget {
-  HelpPage({Key? key}) : super(key: key);
+  HelpPage({super.key});
 
   final logic = Get.put(HelpLogic());
   final state = Get.find<HelpLogic>().state;

@@ -9,7 +9,7 @@ import 'package:poem_generator/widgets/custom_formatting.dart';
 import 'logic.dart';
 
 class OptPage extends StatelessWidget {
-  OptPage({Key? key}) : super(key: key);
+  OptPage({super.key});
 
   final logic = Get.put(OptLogic());
   final state = Get.find<OptLogic>().state;

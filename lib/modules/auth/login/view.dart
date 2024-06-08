@@ -16,8 +16,6 @@ class LoginPage extends StatelessWidget {
 
   final logic = Get.put(LoginLogic());
   final state = Get.find<LoginLogic>().state;
-  bool showPassword = true;
-  bool rememberMe = false;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +65,6 @@ class LoginPage extends StatelessWidget {
                         }
                         return null;
                       },
-
                       decoration: InputDecoration(
                         contentPadding: const EdgeInsets.symmetric(
                             horizontal: 0, vertical: 0),
@@ -82,16 +79,16 @@ class LoginPage extends StatelessWidget {
                         suffixIcon: IconButton(
                           hoverColor: Colors.transparent,
                           onPressed: () {
-                            // setState(() {
-                            //   showPassword = !showPassword;
-                            // });
+                            // logic.setShowPassword();
+                            // logic.update();
                           },
-                          icon: Icon(
-                            showPassword == true
-                                ? Icons.visibility
-                                : Icons.visibility_off,
-                            color: AppColors.borderColor,
-                          ),
+                          icon: const Icon(
+                              // logic.showPassword == true
+                              //     ?
+                              Icons.visibility
+                              // : Icons.visibility_off,
+                              // color: AppColors.borderColor,
+                              ),
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(100),
@@ -106,12 +103,11 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      obscureText:
-                          showPassword, // Password visibility based on showPassword
+                      // obscureText: logic.showPassword,
                     ),
                     const SizedBox(height: 10),
                     // remember password
-                    rememberPassword(),
+                    // rememberPassword(),
                     const SizedBox(height: 40),
                     ElevatedButton(
                       onPressed: () {
@@ -148,6 +144,7 @@ class LoginPage extends StatelessWidget {
   }
 
   GestureDetector rememberPassword() {
+    var rememberMe = false;
     return GestureDetector(
       onTap: () {
         // setState(() {

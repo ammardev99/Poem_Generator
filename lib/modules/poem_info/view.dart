@@ -7,7 +7,7 @@ import 'package:poem_generator/widgets/custom_formatting.dart';
 import 'logic.dart';
 
 class PoemInfoPage extends StatelessWidget {
-  PoemInfoPage({Key? key}) : super(key: key);
+  PoemInfoPage({super.key});
 
   final logic = Get.put(PoemInfoLogic());
   final state = Get.find<PoemInfoLogic>().state;

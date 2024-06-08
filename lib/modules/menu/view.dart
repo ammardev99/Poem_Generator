@@ -9,7 +9,7 @@ import 'package:poem_generator/widgets/custom_user_profile.dart';
 import 'logic.dart';
 
 class MenuPage extends StatelessWidget {
-  MenuPage({Key? key}) : super(key: key);
+  MenuPage({super.key});
 
   final logic = Get.put(MenuLogic());
   final state = Get.find<MenuLogic>().state;
@@ -56,7 +56,7 @@ class MenuPage extends StatelessWidget {
                 backgroundColor: AppColors.secondaryColor,
                 duration: const Duration(milliseconds: 1000),
               ));
-              Get.offAndToNamed(RouteName.selectAccountScreen);
+              Get.offAndToNamed(RouteName.loginPage);
             },
           ),
         )

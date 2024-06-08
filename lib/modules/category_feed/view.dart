@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'logic.dart';
 
 class CategorizedPage extends StatelessWidget {
-  CategorizedPage({Key? key}) : super(key: key);
+  CategorizedPage({super.key});
 
   final logic = Get.put(CategoryfeedLogic());
   final state = Get.find<CategoryfeedLogic>().state;
@@ -13,10 +13,10 @@ class CategorizedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SafeArea(
       child: Scaffold(
-       body: Center(
-        child: Text('CategoryfeedPage'),
+        body: Center(
+          child: Text('CategoryfeedPage'),
         ),
-          ),
+      ),
     );
   }
 }

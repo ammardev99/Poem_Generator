@@ -29,7 +29,7 @@ class SignUpPage extends StatelessWidget {
             appBar: AppBar(
               leading: BackButton(
                 onPressed: () {
-                  Get.offAllNamed(RouteName.selectAccountScreen);
+                  Get.offAllNamed(RouteName.loginPage);
                 },
               ),
             ),
@@ -96,20 +96,6 @@ class SignUpPage extends StatelessWidget {
                           hintText: "Password",
                           hintStyle:
                               const TextStyle(color: AppColors.borderColor),
-                          suffixIcon: IconButton(
-                            hoverColor: Colors.transparent,
-                            onPressed: () {
-                              // setState(() {
-                              //   showPassword = !showPassword;
-                              // });
-                            },
-                            icon: Icon(
-                              showPassword == true
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
-                              color: AppColors.borderColor,
-                            ),
-                          ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(100),
                             borderSide: const BorderSide(
@@ -123,14 +109,10 @@ class SignUpPage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        obscureText:
-                            showPassword, // Password visibility based on showPassword
                       ),
                       const SizedBox(height: 10),
-                      // remember password
-                      rememberPassword(),
+                      // rememberPassword(),
                       const SizedBox(height: 40),
-
                       ElevatedButton(
                         onPressed: () {
                           logic.signup();
@@ -139,7 +121,6 @@ class SignUpPage extends StatelessWidget {
                         style: buttonStyle(),
                         child: const Text('SignUp'),
                       ),
-
                       // customActionButton("Sign up", context, RouteName.poemApp, 'r'),
                       sizeBox(10),
                       customInfoAction(

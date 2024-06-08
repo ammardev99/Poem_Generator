@@ -5,7 +5,7 @@ import 'package:poem_generator/widgets/custom_formatting.dart';
 import 'logic.dart';
 
 class FavoritePage extends StatelessWidget {
-  FavoritePage({Key? key}) : super(key: key);
+  FavoritePage({super.key});
 
   final logic = Get.put(FavoriteLogic());
   final state = Get.find<FavoriteLogic>().state;

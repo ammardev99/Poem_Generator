@@ -8,7 +8,7 @@ import 'package:poem_generator/widgets/custom_formatting.dart';
 import 'logic.dart';
 
 class CategoriesPage extends StatelessWidget {
-  CategoriesPage({Key? key}) : super(key: key);
+  CategoriesPage({super.key});
 
   final logic = Get.put(CategoriesLogic());
   final state = Get.find<CategoriesLogic>().state;

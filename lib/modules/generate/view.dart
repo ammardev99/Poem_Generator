@@ -9,7 +9,7 @@ import 'logic.dart';
 
 // ignore: must_be_immutable
 class GeneratePage extends StatelessWidget {
-  GeneratePage({Key? key}) : super(key: key);
+  GeneratePage({super.key});
 
   final logic = Get.put(GenerateLogic());
   final state = Get.find<GenerateLogic>().state;

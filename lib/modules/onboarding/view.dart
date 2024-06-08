@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'logic.dart';
 
 class OnboardingPage extends StatelessWidget {
-  OnboardingPage({Key? key}) : super(key: key);
+  OnboardingPage({super.key});
 
   final logic = Get.put(OnboardingLogic());
   final state = Get.find<OnboardingLogic>().state;

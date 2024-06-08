@@ -44,7 +44,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   child: TextButton(
                       onPressed: () {
                         setState(() {
-                          Get.offAndToNamed(RouteName.selectAccountScreen);
+                          Get.offAndToNamed(RouteName.loginPage);
                         });
                       },
                       child: customInfo("Skip", AppColors.borderColor))),
@@ -102,7 +102,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                               curve: Curves.easeIn,
                             );
                           } else {
-                            Get.offAndToNamed(RouteName.selectAccountScreen);
+                            Get.offAndToNamed(RouteName.loginPage);
                           }
                         });
                       },

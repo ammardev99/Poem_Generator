@@ -75,7 +75,7 @@ Widget aboutCard(String title, String text) {
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       sizeBox(10),
-      customTitle(
+      customHeading(
         title,
         AppColors.secondaryColor,
       ),

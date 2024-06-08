@@ -8,7 +8,7 @@ import 'logic.dart';
 
 // ignore: must_be_immutable
 class EditprofilePage extends StatelessWidget {
-  EditprofilePage({Key? key}) : super(key: key);
+  EditprofilePage({super.key});
 
   final logic = Get.put(EditprofileLogic());
   final state = Get.find<EditprofileLogic>().state;
@@ -63,15 +63,16 @@ class EditprofilePage extends StatelessWidget {
                           ElevatedButton(
                             onPressed: () {},
                             style: ButtonStyle(
-                              backgroundColor:
-                                  const WidgetStatePropertyAll(AppColors.primaryColor),
+                              backgroundColor: const WidgetStatePropertyAll(
+                                  AppColors.primaryColor),
                               padding: WidgetStatePropertyAll(
                                   EdgeInsets.symmetric(
                                       horizontal:
                                           MediaQuery.of(context).size.width / 3,
                                       vertical: 15)),
                             ),
-                            child: customHeading("Update", AppColors.whiteColor),
+                            child:
+                                customHeading("Update", AppColors.whiteColor),
                           ),
                         ],
                       ),
@@ -79,9 +80,8 @@ class EditprofilePage extends StatelessWidget {
                     ],
                   ),
                 ),
-              sizeBox(40)
+                sizeBox(40)
               ],
-      
             ),
           )),
     );
@@ -102,7 +102,6 @@ class EditprofilePage extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               color: Colors.transparent,
             ),
-
           ],
         ),
         Positioned(
@@ -112,7 +111,8 @@ class EditprofilePage extends StatelessWidget {
             children: [
               Container(
                 decoration: BoxDecoration(
-                    border: Border.all(width: 3, color: AppColors.primaryColor03),
+                    border:
+                        Border.all(width: 3, color: AppColors.primaryColor03),
                     borderRadius: BorderRadius.circular(100)),
                 child: const CircleAvatar(
                   backgroundImage: AssetImage('assets/png/author.png'),
@@ -124,8 +124,8 @@ class EditprofilePage extends StatelessWidget {
                   right: 0,
                   child: IconButton(
                       onPressed: () {},
-                      icon:
-                          const Icon(Icons.camera_alt_rounded, color: AppColors.primaryColor)))
+                      icon: const Icon(Icons.camera_alt_rounded,
+                          color: AppColors.primaryColor)))
             ],
           ),
         )

@@ -10,7 +10,7 @@ import 'package:poem_generator/widgets/custom_style.dart';
 import 'logic.dart';
 
 class EmailVerifyPage extends StatelessWidget {
-  EmailVerifyPage({Key? key}) : super(key: key);
+  EmailVerifyPage({super.key});
 
   final logic = Get.put(EmailVerifyLogic());
   final state = Get.find<EmailVerifyLogic>().state;

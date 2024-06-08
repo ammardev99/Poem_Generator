@@ -6,7 +6,6 @@ class LoginState {
 
   LoginState() {
     emailController = TextEditingController();
-   passwordController = TextEditingController();
-
+    passwordController = TextEditingController();
   }
 }

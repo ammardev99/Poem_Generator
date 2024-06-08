@@ -13,6 +13,7 @@ class LoginLogic extends GetxController {
 
   FirebaseAuth auth = FirebaseAuth.instance;
   bool dataloading = false;
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   get formKey => _formKey;
@@ -22,19 +23,17 @@ class LoginLogic extends GetxController {
     }
     dataloading = true;
     update();
-
-    auth
-        .signInWithEmailAndPassword(
+    auth.signInWithEmailAndPassword(
             email: state.emailController!.text,
             password: state.passwordController!.text.toString())
         .then((value) {
       dataloading = false;
-      showSnackBar('Message', 'Login Successful!');
+      showSnackBar('Welcome', 'Login Successful!');
       Get.offAll(() => const PoemApp());
       dataloading = false;
       update();
     }).onError((error, stackTrace) {
-      showSnackBar('Message', 'Server Error');
+      showSnackBar('Error', 'email or password not match. please try again');
       log(error.toString());
       update();
       dataloading = false;
@@ -42,3 +41,4 @@ class LoginLogic extends GetxController {
     });
   }
 }
+

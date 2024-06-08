@@ -7,7 +7,7 @@ import 'package:poem_generator/widgets/custom_style.dart';
 import 'logic.dart';
 
 class ContactUsPage extends StatelessWidget {
-  ContactUsPage({Key? key}) : super(key: key);
+  ContactUsPage({super.key});
 
   final logic = Get.put(ContactUsLogic());
   final state = Get.find<ContactUsLogic>().state;
@@ -53,7 +53,8 @@ class ContactUsPage extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {},
                       style: nextButtonStyle(context),
-                      child: customHeading("Send a message", AppColors.whiteColor),
+                      child:
+                          customHeading("Send a message", AppColors.whiteColor),
                     ),
                   ],
                 ),
